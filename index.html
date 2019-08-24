@@ -17,6 +17,11 @@
 		
 		ol,ul{list-style:none}
 		p,blockquote,pre,table,figure,hr,form,ol,ul,dl{margin:1.5em 0}
+		.post ul li span{position:relative;display:block;padding:0;margin:.5em 0 .5em 2em;text-decoration:none}
+		.post ol li{position:relative;display:block;padding:0;margin:.5em 0 .5em 2em;background:#fff;text-decoration:none}
+.post ol li:before{content:counter(li);counter-increment:li;position:absolute;left:-2.5em;height:2em;width:2em;text-align:center}
+		.post-body li{list-style-type:none}
+		.post-body ul{position:relative;display:block;padding:0;margin:.5em 0 .5em 1.5em;text-decoration:none}
 		/* Anime List Meongs - Aka321 */
 .alm321 .alm-info{width: 100%;text-align: center}
 .alm321 .alm-info ul{margin: 0}
