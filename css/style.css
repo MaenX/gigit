@@ -52,8 +52,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 .data_title {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 1rem;
+    font-weight: 500;
 }
 
 #cd-gallery-items li {
