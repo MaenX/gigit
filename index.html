@@ -1,350 +1,323 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://codyhouse.co/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://codyhouse.co/assets/favicon/favicon-16x16.png">
-
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/css/reset.css"> 
-<link rel="stylesheet" href="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/css/style.css"> 
-<script src="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/js/modernizr.js"></script> 
+
 	
 	<style>
 		
-		ol,ul{list-style:none}
-		p,blockquote,pre,table,figure,hr,form,ol,ul,dl{margin:1.5em 0}
-		.post ul li span{position:relative;display:block;padding:0;margin:.5em 0 .5em 2em;text-decoration:none}
-		.post ol li{position:relative;display:block;padding:0;margin:.5em 0 .5em 2em;background:#fff;text-decoration:none}
-.post ol li:before{content:counter(li);counter-increment:li;position:absolute;left:-2.5em;height:2em;width:2em;text-align:center}
-		.post-body li{list-style-type:none}
-		.post-body ul{position:relative;display:block;padding:0;margin:.5em 0 .5em 1.5em;text-decoration:none}
-		/* Anime List Meongs - Aka321 */
-.alm321 .alm-info{width: 100%;text-align: center}
-.alm321 .alm-info ul{margin: 0}
-.alm321 .alm-info ul li{border: 1px solid #ddd;margin: 0 0 10px;list-style: none;padding: 8px;display: inline-block;text-align: center}
-.alm321 .alm-apb{text-align: center;font-weight: bold;margin: 10px 0;font-size: 13px}
-.alm321 .alm-apb a{line-height: 30px;width: 30px;color: #FFFFFF;border-radius: 25%;background: #00A3A3;margin: 2px;transition: all 0.25s;display: inline-block}
-.alm321 .alm-apb a:hover{color: #FFFFFF;background: #000000}
-.alm321 .alm-list{display: block;position: relative;overflow: hidden}
-.alm321 .alm-list .alm-wrap{width: 33.333%;float: left}
-.alm321 .alm-list .alm-item ul{margin: 0 !important;padding: 0 6px !important}
-.alm321 .alm-list .alm-item ul .alm-head{font-size: 125%;font-weight:bold}
-.alm321 .alm-list .alm-item ul .alm-head a{color:#000000}
-.alm321 .alm-list .alm-item ul li{list-style: none;font-size:14px}
-.alm321 .alm-list .alm-item ul li a{color:#00A3A3}
-@media only screen and (max-width: 768px){.alm321 .alm-info ul li{width:100%;margin:0 0 2px !important}.alm321 .alm-list .alm-wrap{width:100%}}
+	/* Anime List v2 */
+.ualads{overflow:hidden}
+.ualads .ualads-apb{font-size: 14px}
+.ualads .ualads-apb a{line-height: 30px;width: 38px;color: #FFFFFF;border-radius: 5px;background: #6AB2F2;transition: all 0.25s;display: inline-block;text-align: center}
+.ualads .ualads-apb a:hover{text-decoration: underline;color: #FFFFFF}
+.ualads .ualads-wrap{margin-top: 20px}
+.ualads .ualads-group{display: inline-block;width: 100%;background: #F9F9F9;margin-bottom: 10px}
+.ualads .ualads-head{font-weight: 700;overflow: hidden;margin-bottom: 10px;background: #1581BC;font-size: 15px}
+.ualads .ualads-head a{color: #FFFFFF;background: #19A3EA;float: left;margin: -5px -10px -8px -10px;padding: 12px 30px;border-top-right-radius: 50px}
+.ualads .ualads-item{float: left;color: #727272;width: 33.3%;border-left: 2px solid #D7D7D7}
+.ualads .ualads-item a{line-height: 24px;font-size: 14px;color: #7A7A7A;padding-right: 10px;text-overflow: ellipsis;overflow: hidden;font-weight: 100;white-space: nowrap;padding-left: 10px}
+@media screen and (max-width:1066px){.ualads .ualads-apb a{margin:1px}}
+@media only screen and (max-width: 768px){.ualads .ualads-item{width:50%}}
+@media screen and (max-width:480px){.ualads .ualads-item{width:100%}}
 	</style>
 	
-<title>Breadcrumbs &amp; Multi-Step Indicator | CodyHouse</title>
+<title>Page Anime List V2 | onanion</title>
 </head>
 <body>
 <header>
-<h1>Breadcrumbs &amp; Multi-Step Indicator</h1>
-<div class="cd-nugget-info">
-<a href="https://codyhouse.co/gem/css-breadcrumbs-and-multi-step-indicator">
-<span>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<style type="text/css">
-						.cd-nugget-info-arrow{fill:#383838;}
-					</style>
-<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
-</svg>
-</span>
-Article &amp; Download
-</a>
-</div> 
-</header>
-<section>
-<h2>1 - Basic</h2>
+<h1>Page Anime List V2</h1>
+	
+	<div class='ualads'>
+<div class='ualads-apb'>
+<center>
+<a href='#%23'>#</a><a href='#A'>A</a><a href='#B'>B</a><a href='#C'>C</a><a href='#D'>D</a><a href='#E'>E</a><a href='#F'>F</a><a href='#G'>G</a><a href='#H'>H</a><a href='#I'>I</a><a href='#J'>J</a><a href='#K'>K</a><a href='#L'>L</a><a href='#M'>M</a><a href='#N'>N</a><a href='#O'>O</a><a href='#P'>P</a><a href='#Q'>Q</a><a href='#R'>R</a><a href='#S'>S</a><a href='#T'>T</a><a href='#U'>U</a><a href='#V'>V</a><a href='#W'>W</a><a href='#X'>X</a><a href='#Y'>Y</a><a href='#Z'>Z</a></center>
+<div class='clear'>
+</div>
+</div>
+<div class='ualads-wrap'>
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='#'>#</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-	<div class='alm321'>
- <div class='alm-info'>
-  <ul>
-   <li>List Info</li>
-   <li>List Info</li>
-   <li>List Info</li>
-   <li>List Info</li>
-   <li>List Info</li>
-   <li>List Info</li>
-  </ul>
- </div>
- <div class='alm-apb'>
-  <a href='##'>#</a><a href='#A'>A</a><a href='#B'>B</a><a href='#C'>C</a><a href='#D'>D</a><a href='#E'>E</a><a href='#F'>F</a><a href='#G'>G</a><a href='#H'>H</a><a href='#I'>I</a><a href='#J'>J</a><a href='#K'>K</a><a href='#L'>L</a><a href='#M'>M</a><a href='#N'>N</a><a href='#O'>O</a><a href='#P'>P</a><a href='#Q'>Q</a><a href='#R'>R</a><a href='#S'>S</a><a href='#T'>T</a><a href='#U'>U</a><a href='#V'>V</a><a href='#W'>W</a><a href='#X'>X</a><a href='#Y'>Y</a><a href='#Z'>Z</a>
-  <div class='clear'></div>
-  </div>
-  <div class='alm-listn'>
-  <div class='alm-wrap'>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='#'>#</a></li>
-     
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-	  <nav>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='A'>A</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-	  </nav>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='B'>B</a></li>  
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='A'>A</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='C'>C</a></li>   
-     
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='D'>D</a></li> 
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='E'>E</a></li>
-     
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='F'>F</a></li>  
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='B'>B</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='G'>G</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='H'>H</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='C'>C</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-  </div>
-  <div class='alm-wrap'>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='I'>I</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='J'>J</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='D'>D</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='K'>K</a></li>
-     
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='L'>L</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='M'>M</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='E'>E</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='N'>N</a></li> 
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='O'>O</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='F'>F</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='P'>P</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-  </div>
-  <div class='alm-wrap'>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='Q'>Q</a></li>  
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='G'>G</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='R'>R</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='S'>S</a></li>  
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='H'>H</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='T'>T</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='U'>U</a></li>  
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='I'>I</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='V'>V</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='W'>W</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='J'>J</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='X'>X</a></li> 
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='Y'>Y</a></li> 
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='K'>K</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-   <div class='alm-item'>
-    <ul>
-     <li class='alm-head'><a name='Z'>Z</a></li>  
 
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-     <li><a href='#' target='_blank'>Nama Anime</a></li>
-    
-    </ul>
-   </div>
-  </div>
- </div>
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='L'>L</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='M'>M</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='N'>N</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='O'>O</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='P'>P</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='Q'>Q</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='R'>R</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='S'>S</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='T'>T</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='U'>U</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='V'>V</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='W'>W</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='X'>X</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='Y'>Y</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+
+
+<div class='ualads-group'>
+<div class='ualads-head'>
+<a name='Z'>Z</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+<div class='ualads-item'>
+<a title='Nama Anime' href='#'>Nama Anime</a></div>
+</div>
+</div>
 </div>
 	
-	
-	
-	
-</section>
-<script src="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/js/jquery-2.1.4.js"></script>
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  	ga('create', 'UA-48014931-1', 'codyhouse.co');
-  	ga('set', 'anonymizeIp', true);
-  	ga('send', 'pageview');
-</script>
 </body>
 </html>
