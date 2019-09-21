@@ -130,9 +130,20 @@ font-size: 2rem;
 background: #2c3f4c;
 font-family: "lato", sans-serif;
 }
-	
-a {
-text-decoration: none
+
+.link a {
+text-decoration: none;
+position: relative;
+font-size: 14px;
+color: #f3f77e;
+-webkit-transition: all .2s;
+-moz-transition: all .2s;
+transition: all .2s;
+}
+a:hover {
+color: #dde079;
+}
+
 </style>
 	
 <title>Pure CSS Popup Box | onanion</title>
@@ -140,7 +151,7 @@ text-decoration: none
 <body>
 <header><h1>Pure CSS Popup Box</h1></header>
 
-<center><a href="https://onanion.blogspot.com/2019/08/blog-post_71.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back To Article</a></center>
+<div class='link'><a href="https://onanion.blogspot.com/2019/08/blog-post_71.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back To Article</a></div>
 
 <br/>
 <br/>
