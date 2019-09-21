@@ -5,141 +5,230 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://codyhouse.co/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://codyhouse.co/assets/favicon/favicon-16x16.png">
+<title>onanion</title>
+	
+	<style>@charset "UTF-8";
+/* wjs-related v2.0.6 */
+.wjs-relate, .wjs-rel__image, .wjs-rel__card, .wjs-rel__title, .wjs-rel__snippet {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 0 transparent;
+  font: inherit;
+  box-sizing: border-box;
+}
 
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/css/reset.css"> 
-<link rel="stylesheet" href="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/css/style.css"> 
-<script src="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/js/modernizr.js"></script> 
-<title>Breadcrumbs &amp; Multi-Step Indicator | CodyHouse</title>
+.wjs-rel__card {
+  width: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 1em;
+}
+
+.wjs-related {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.wjs-rel__image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.wjs-rel__image img {
+  width: 100%;
+}
+
+.wjs-rel__snippet {
+  padding-top: 0.5em;
+}
+
+@media (min-width: 376px) {
+  .wjs-rel__card {
+    width: 50%;
+  }
+}
+@media (min-width: 576px) {
+  .wjs-rel__card {
+    width: 33.333333%;
+  }
+
+  .wjs-related {
+    font-size: 16px;
+  }
+}
+/* Cuerpo
+ *------------------------ */
+.wjs-rel__card-content {
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1), 0 2px 2px -1px rgba(0, 0, 0, 0.2);
+  /* sombra */
+}
+
+/* Contenedor de datos
+ *------------------------ */
+.wjs-rel__data {
+  padding: 1.2em;
+  color: #565656;
+  background-color: #fff;
+}
+
+/* Titulo
+ *------------------------ */
+.wjs-rel__title {
+  font-weight: 500;
+  /* grosor texto titulo */
+  font-size: 1em;
+  /* tamaño de fuente */
+}
+
+/* Fecha
+ *------------------------ */
+.wjs-rel__date {
+  font-size: 12px;
+  /* tamaño de fuente */
+  text-transform: uppercase;
+  /* transformacion */
+  opacity: 0.5;
+  /* opacidad */
+}
+	</style>
+	
 </head>
 <body>
-<header>
-<h1>Breadcrumbs &amp; Multi-Step Indicator</h1>
-<div class="cd-nugget-info">
-<a href="https://codyhouse.co/gem/css-breadcrumbs-and-multi-step-indicator">
-<span>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-<style type="text/css">
-						.cd-nugget-info-arrow{fill:#383838;}
-					</style>
-<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
-</svg>
-</span>
-Article &amp; Download
-</a>
-</div> 
-</header>
-<section>
-<h2>1 - Basic</h2>
-<nav>
-<ol class="cd-breadcrumb">
-<li><a href="#0">Home</a></li>
-<li><a href="#0">Gallery</a></li>
-<li><a href="#0">Web</a></li>
-<li class="current"><em>Project</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>2 - Custom Separator</h2>
-<nav>
-<ol class="cd-breadcrumb custom-separator">
-<li><a href="#0">Home</a></li>
-<li><a href="#0">Gallery</a></li>
-<li><a href="#0">Web</a></li>
-<li class="current"><em>Project</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>3 - Custom Icons</h2>
-<nav>
-<ol class="cd-breadcrumb custom-separator custom-icons">
-<li><a href="#0">Home</a></li>
-<li><a href="#0">Gallery</a></li>
-<li><a href="#0">Web</a></li>
-<li class="current"><em>Project</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>4 - Triangle</h2>
-<nav>
-<ol class="cd-breadcrumb triangle">
-<li><a href="#0">Home</a></li>
-<li><a href="#0">Gallery</a></li>
-<li><a href="#0">Web</a></li>
-<li class="current"><em>Project</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>5 - Triangle with custom icons</h2>
-<nav>
-<ol class="cd-breadcrumb triangle custom-icons">
-<li><a href="#0">Home</a></li>
-<li><a href="#0">Gallery</a></li>
-<li class="current"><em>Web</em></li>
-<li><em>Project</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>6 - Basic Multi-Steps</h2>
-<nav>
-<ol class="cd-multi-steps text-center">
-<li class="visited"><a href="#0">Cart</a></li>
-<li class="visited"><a href="#0">Billing</a></li>
-<li class="current"><em>Delivery</em></li>
-<li><em>Review</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>7 - Basic Multi-Steps with Custom Icons</h2>
-<nav>
-<ol class="cd-multi-steps text-center custom-icons">
-<li class="visited"><a href="#0">Cart</a></li>
-<li class="visited"><a href="#0">Billing</a></li>
-<li class="current"><em>Delivery</em></li>
-<li><em>Review</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>8 - Dot Indicators</h2>
-<nav>
-<ol class="cd-multi-steps text-top">
-<li class="visited"><a href="#0">Cart</a></li>
-<li class="visited"><a href="#0">Billing</a></li>
-<li class="current"><em>Delivery</em></li>
-<li><em>Review</em></li>
-</ol>
-</nav>
-</section>
-<section>
-<h2>9 - Dot Indicators with Steps Counter</h2>
-<nav>
-<ol class="cd-multi-steps text-bottom count">
-<li class="visited"><a href="#0">Cart</a></li>
-<li class="visited"><a href="#0">Billing</a></li>
-<li class="current"><em>Delivery</em></li>
-<li><em>Review</em></li>
-</ol>
-</nav>
-</section>
-<script src="https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/js/jquery-2.1.4.js"></script>
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  	ga('create', 'UA-48014931-1', 'codyhouse.co');
-  	ga('set', 'anonymizeIp', true);
-  	ga('send', 'pageview');
-</script>
-</body>
+	<!-- Tutorial: bit.ly/bgRelatedPost-->
+<div class="general">
+  <header>
+    <h1>Whale Related</h1><span>Best related post widget for blogger</span>
+  </header>
+  <main>
+    <div class="container">
+      <div class="template">
+        <div class="template-blog">
+          <div class="template-widget">
+            <h2 class="template-widget__title">Article example</h2>
+            <div class="template-widget__content">
+              <!-- HTML Related post-->
+              <div class="wjs-related" id="wjs-related"></div>
+              <!-- End HTML Related post-->
+            </div>
+          </div>
+        </div>
+        <div class="template-sidebar">
+          <div class="template-widget">
+            <h2 class="template-widget__title">Widget example</h2>
+            <div class="template-widget__content">
+              <div class="example-grid__item far fa-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer><a href="https://www.zkreations.com" target="_blank">Developed <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by <span class="by">zkreations</span></a></footer>
+</div>
+	
+	<script>/*!
+ * wjs-related v2.0.6
+ * Copyright 2018 zkreations
+ * Developed by José Gregorio (fb.com/JGMateran)
+ * Licensed under MIT (github.com/zkreations/wjs-related/blob/master/LICENSE)
+ */
+   var related = (function(){
+    
+   'use strict';
+
+   var defaults = {
+      id: '1692379497738760100',
+      homepage: 'https://www.zkreations.com',
+      image: 'source/img/no-img-blogger.png',
+      length: 6,
+      snippet: 50,
+      imgSize: 's256',
+      container: document.getElementById('wjs-related'),
+      tags: ['tutorial','anime','plantilla']
+   };
+
+   var tags$length = defaults.tags.length;
+   var script = document.createElement( 'script' );
+
+   var src = defaults.homepage + '/feeds/posts/default' +
+      '?alt=json-in-script' +
+      '&callback=related' +
+      '&max-results=' + ( defaults.length + 1 ) +
+      '&q=';
+
+   for ( var n = 0; n < tags$length; n++ ){
+      src += 'label:"' + defaults.tags[ n ] + '"' + ( n === tags$length - 1 ? '' : '|' );
+   }
+   
+   script.src = src;
+   
+   document.body.appendChild( script );
+   
+   function render( data ){
+      var title = data.title.$t;
+      var content = data.content;
+      var summary = data.summary;
+      var body = content ? content.$t : summary.$t;
+      var snippet = (body).replace(/<[^>]*>?/g,'').substring( 0, defaults.snippet ) + '...';
+      var img = data.media$thumbnail;
+      var tempHtml = document.createElement('div');
+      tempHtml.innerHTML = body;
+      var imgHtml = tempHtml.querySelector('img');
+      var image = ( img ? img.url : (imgHtml ? imgHtml.src : defaults.image)).replace( /s\B\d{2,4}-c/, defaults.imgSize); 
+      var url = (function(){
+         for ( var i = 0; i < data.link.length; i++ ){
+            var link = data.link[i];
+            if ( link.rel === 'alternate' ){
+               return link.href;
+            }
+         }
+      })();
+      var published = new Date( data.published.$t ).toLocaleDateString(
+         'es-ES',
+         {
+            year:'numeric',
+            month:'long',
+            day: 'numeric'
+         }
+      );
+      return (
+         '<div class="wjs-rel__card">'+
+            '<div class="wjs-rel__card-content">'+
+               '<a href="' + url + '" class="wjs-rel__image">'+
+                  '<img src="' + image + '" alt="' + title + '" />'+
+               '</a>'+
+               '<div class="wjs-rel__data">'+
+                  '<h3 class="wjs-rel__title">' + title + '</h3>'+
+                  '<div class="wjs-rel__date">' + published + '</div>'+
+                  '<p class="wjs-rel__snippet">' + snippet + '</p>'+
+               '</div>'+
+            '</div>'+
+         '</div>'
+      );
+   }
+   function related( json ){
+      var i = 0;
+      var post;
+      var length = defaults.length;
+
+      for ( ; i < length && ( post = json.feed.entry[ i ] ); i++ ){
+         if ( defaults.id !== post.id.$t.split( '.post-' )[ 1 ] ){
+            defaults.container.innerHTML += render( post );
+         } else {
+            length++;
+         }
+      }
+   }
+   return related;
+   })();</script>
+	
+	</body>
 </html>
