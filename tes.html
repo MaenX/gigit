@@ -1,434 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <title>Resep Bolu</title>
-	<style>/* HEADER */
-#sideNav .navbar-nav .nav-item .nav-link {
-    font-weight: 800;
-    letter-spacing: .05rem;
-    text-transform: uppercase
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+
+  <!-- My CSS -->
+  <style>.container {
+    margin-top: 20px;
 }
 
-#sideNav .navbar-toggler:focus {
-    outline-color: #d48a6e
-}
-@media (min-width: 992px) {
-    body {
-        padding-top:0;
-        padding-left: 17rem;
-    }
+.illustrasi img {
+    margin-top: -300px;
+    margin-left: 100px;
 }
 
-@media (min-width: 992px) {
-    #sideNav {
-        text-align:center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        width: 17rem;
-        height: 100vh
-    }
-
-    #sideNav .navbar-brand {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin: auto auto 0;
-        padding: .5rem
-    }
-
-    #sideNav .navbar-brand .img-profile {
-        max-width: 10rem;
-        max-height: 10rem;
-        border: .5rem solid rgba(255,255,255,.2)
-    }
-
-    #sideNav .navbar-collapse {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-        -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-        flex-grow: 0;
-        width: 100%;
-        margin-bottom: auto
-    }
-
-    #sideNav .navbar-collapse .navbar-nav {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        width: 100%
-    }
-
-    #sideNav .navbar-collapse .navbar-nav .nav-item {
-        display: block
-    }
-
-    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
-        display: block
-    }
-    .navigasi{
-        background: url(https://www.tasteofhome.com/wp-content/uploads/2018/01/Ganache-Topped-Chocolate-Cake_EXPS_DSBZ17_39438_B01_20_3b-4.jpg) no-repeat!important;
-        background-size: cover;
-    }
-    .navigasi li{
-        background:rgba(0, 0, 0, 0.5);
-        margin: 5px 0;
-        padding: 0 10px
-    }
-    .navigasi li a{
-        color: #fff
-    }
-}
-.navigasi{
-    background: rgb(80, 79, 79);
-}
-/* RESEP INTRO */
-div.header {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    padding: 10px;
-    height: 100vh;
-    width: 100%;
-    background: url(https://c.wallhere.com/photos/16/31/dessert_cake_pastry_sweet-612471.jpg!d) no-repeat;
-    background-size: 100% cover;
-    background-position: 30%;
-}
-h4 {
-    font-family: monospace;
-    font-weight: bold;
+ul li {
+    margin-top: 24px;
 }
 
-.recipename {
-    margin-top: 280px;
-    text-align: center;
-    color: white;
-    font-size: 60px;
-    font-weight: bold;
-}
-.kel {
-    color: white;
-    font-size: 45px;
-}
-.recipename,.kel{
-    text-shadow: 1px 1px 13px #000;
+ul li a {
+    color: #77007F
 }
 
-/* BAHAN */
-.card, .shadow{
-    min-height: 340px !important;
+.tagline {
+    margin-top: -50px;
 }
-/* CARA MEMBUAT */
-#cara{
-  font-size: 120%;
-	text-align: center;
-  font-weight: bold;
-}
-#campur {
-  background-position: center;
- 	font-family: Georgia, Times, serif;
-}
-/* HASIl */
 
-  .style3 {font-family: Verdana;}
-  .style6 {font-size: 18px;
-           font-family: Courier;
-           }
-body{
-    background: #ffffff;
-           }
+.tagline button {
+    margin-top: 10px;
+    border-radius: 24px;
+    width: 32%;
+}
 
-		/* FOOTER  */</style>
+.tagline h1 {
+    margin-top: 100px;
+    color: #485460
+}
+
+.tagline p {
+    color: #808080
+	  }</style>
+
+  <title>Cakeinian </title>
 </head>
 
-<!-- HEADER NAV -->
-<div class="blur"></div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navigasi" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger" href="#tentang">
-            <span class="d-block d-lg-none">Bolu Enak</span>
-            <span class="d-none d-lg-block">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Ganache-Topped-Chocolate-Cake_EXPS_DSBZ17_39438_B01_20_3b-4.jpg">
-            </span>
-        </a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#tentang">Bolu Cokelat</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#bahan">Bahan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#cara">Cara Membuat</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#hasil">Hasil</a>
-                </ul>
-            </div>
-        </nav>
-        <!-- HEAD -->
-        <div class="header" id="tentang">
-            <h1 class="recipename">CHOCOLATE VAGANZA</h1>
-            <h2 class="kel">Chocolate de Reves</h2>
-        </div>
-        
-        <!-- BAHAN -->
-        <div class="container mt-4" id="bahan">
-            <h2 class="text-center my-5 font-weight-bold">Bahan-bahan </h2>
-            <!-- row 1 -->
-            <div class="row mb-4">
-                <div class="col-4">
-                    <div class="card shadow" style="width: 18rem;">
-                            <img class="card-img-top" src="https://img-s2.onedio.com/id-572b69fb444afaa8700e565d/rev-0/raw/s-df01767ed3bb06c82a6cb9a43d59f73efdda28d4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Tepung Terigu</h5>
-                                <h3 class="card-text text-danger">150 gr</h3>
-                            </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="card shadow" style="width: 18rem;">
-                            <img class="card-img-top" src="https://chinimandi.com/wp-content/uploads/2018/05/487573201.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Gula Pasir</h5>
-                                <h3 class="card-text text-danger">150 gr</h3>
-                            </div>
-                    </div>
-                </div>
-        
-                <div class="col-md-4">
-                        <div class="card shadow" style="width: 18rem;">
-                                <img class="card-img-top" src="https://i0.wp.com/www.healthline.com/hlcmsresource/images/AN_images/baking-soda-water-and-wooden-spoon-1296x728.jpg?w=1155&h=1528" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Baking Soda</h5>
-                                    <h3 class="card-text text-danger">¼ tsp</h3>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 2 -->
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                            <div class="card shadow" style="width: 18rem;">
-                                    <img class="card-img-top" src="https://www.thoughtco.com/thmb/JR1zf97ErTlf0hSMRux6hFCfCkE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/BakingPowder-58dac9393df78c5162df8fc4.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Baking Powder</h5>
-                                        <h3 class="card-text text-danger">¼ tsp</h3>
-                                    </div>
-                            </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card shadow" style="width: 18rem;">
-                                <img class="card-img-top" src="https://odishasuntimes.com/wp-content/uploads/2017/09/spilled-salt-bottle-on-table.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Garam</h5>
-                                    <h3 class="card-text text-danger">⅛ sdt</h3>
-                                </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card shadow" style="width: 18rem;">
-                                <img class="card-img-top" src="https://www.righteouslyrawchocolate.com/wp-content/uploads/2018/02/cacao-vs-cocoa-matters.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cokelat Bubuk</h5>
-                                    <h3 class="card-text text-danger">25 gr</h3>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 3 -->
-                <div class="row mb-4">
-                        <div class="col-md-4">
-                                <div class="card shadow" style="width: 18rem;">
-                                        <img class="card-img-top" src="https://img.taste.com.au/5VamxIAS/taste/2016/11/almond-milk-109280-1.jpeg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Susu Cair</h5>
-                                            <h3 class="card-text text-danger">200 ml</h3>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card shadow" style="width: 18rem;">
-                                    <img class="card-img-top" src="https://cdn1.medicalnewstoday.com/content/images/articles/321/321990/close-up-of-block-of-butter-being-sliced-may-raise-cholesterol.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Butter Melted</h5>
-                                        <h3 class="card-text text-danger">60 gr</h3>
-                                    </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card shadow" style="width: 18rem;">
-                                    <img class="card-img-top" src="https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/field/image/sunny-side-up-eggs-hero.jpg?itok=V2aQ9L_N" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Butir Telur</h5>
-                                        <h3 class="card-text text-danger">2 butir</h3>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- row 4 -->
-                <div class="row mb-4 justify-content-center">
-                        <div class="col-md-7">
-                                <div class="card shadow" style="width: 36rem;">
-                                        <img class="card-img-top" src="https://i.ytimg.com/vi/4nVwvZRVufs/maxresdefault.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Pisang Ambon</h5>
-                                            <h3 class="card-text text-danger">1 buah</h3>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </div>
-
-<!-- CARA MEMBUAT -->
-<div class="container">
-    <h3><div id="cara">Cara Membuat Bolu Cokelat Rice Cooker :</div></h3>
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center my-2">Campur tepung, gula pasir, baking soda, baking powder, garam, dan coklat bubuk, lalu aduk hingga rata.</li>
-        <img src="carabuat.png" width="20%" height="20%">
-        <li class="list-group-item d-flex justify-content-between align-items-center my-2">Di mangkuk terpisah, kocok susu cair, butter, dan telur.</li>
-        <img src="telur.png" width="20%" height="20%">
-        <li class="list-group-item d-flex justify-content-between align-items-center my-2">Tuang adonan susu ke dalam campuran tepung, kemudian aduk rata.</li>
-        <li class="list-group-item d-flex justify-content-between align-items-center my-2">Masukkan ke dalam rice cooker, masak selama 30 menit.</li>
-        <li class="list-group-item d-flex justify-content-between align-items-centermy-2">Keluarkan dari rice cooker dan sajikan.</li>
-    </ul>
-</div>
-    
-
-<!-- HASIl -->
-<div class="container">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="hasil">
-        <td width="230" colspan="2" valign="top"><table border="0" cellspacing="0" cellpadding="0" width="230">
-            <tr>
-                <td width="15">&nbsp;</td>
-		        <td width="200" class="smallText" id="padding">. <img src="screen-shot-2016-11-19-at-75114-pm-32084bc6883fd9036c75a53ea7a1c485.png" width="500" height="334" /><br />
-                    &nbsp;<br />		</td>
-                    <td width="15">&nbsp;</td>
-                </tr>
-            </table>	</td>
-            <td width="440" valign="top"><br />
-                &nbsp;<br />
-                <table border="0" cellspacing="0" cellpadding="0" width="440">
-                    <tr>
-                        <td height="45" class="pageHeader"><div align="center" class="style3">KAMI PERSEMBAHKAN... </div></td>
-                    </tr>
-                    <tr>
-                        <td height="346" class="bodyText">
-                            <p class="style6">Bolu cokelat rice cooker ini dibuat untuk makanan khusus anak kos. Terlahir dari rasa kenyang yang tidak dapat ditahan, Bolu cokelat ini dibuat dengan tujuan memenuhi rasa lapar para netizen.</p>
-                            <p class="style6">Camilan sore-sore, bikin asyik! </p>
-                            <p class="style6">Selamat menikmati! </p>
-                            <span class="style6"><br />
-                            </span> </td>
-                        </tr>
-                    </table>
-                </td>
-                <td width="40">&nbsp;</td>
-                <td width="100%">&nbsp;</td>
-            </tr>
-        </tr>
-    </table> </td>
-</div>
-
-<!-- FOOTER -->
-<footer class="page-footer font-small blue pt-4 bg-light">
-
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
-
-      <!-- Grid row -->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-
-          <!-- Content -->
-          <h5 class="text-uppercase">Resep Bolu</h5>
-          <p>Disini kamu bisa dapat resep yang cucok untuk anak kos.</p>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase">Anggota</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Aria</a>
-              </li>
-              <li>
-                <a href="#!">Teguh</a>
-              </li>
-              <li>
-                <a href="#!">Siti</a>
-              </li>
-              <li>
-                <a href="#!">Vania</a>
-              </li>
-              <li>
-                <a href="#!">Liro</a>
-              </li>
-              <li>
-                <a href="#!">Husni</a>
-              </li>
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://codelabs.com"> CodeLabs </a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-
-
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <script>$('a[href*="#"]').on('click', function (e) {
-	e.preventDefault();
+  <!-- Header  -->
+  <!-- Navbar -->
+  <div class="container">
+    <ul class="nav justify-content-end">
+      <a class="navbar-brand mr-auto" href="#">
+        <img src="img/logo.png" width="100" height="100" alt="logo">
+      </a>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Recipe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tutorial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Testimonial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+      </li>
+    </ul>
+    <div class="tagline col-md-6">
+      <h1>BUAT KUE MENJADI <br>
+        <b>LEBIH MUDAH</b>
+      </h1>
+      <p>Langkah - langkah mudah membantu Anda <br>
+        dalam membuat kue bolu. Cocok untuk pemula <br>
+        yang sedang belajar masak kue bolu. </p>
+      <button type="button" class="btn btn-primary">KUY BUAT</button>
+    </div>
+    <div class="illustrasi col-md-6 float-md-right">
+      <img src="img/chef.png" alt="chef" width="500">
+    </div>
+  </div>
+  <!-- Akhir Navbar -->
 
-	$('html, body').animate({
-		scrollTop: $($(this).attr('href')).offset().top
-	}, 800, 'linear');
-});</script>
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
