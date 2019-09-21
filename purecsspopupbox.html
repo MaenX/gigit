@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+<link href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'/>
+	
+	<style>
+		.oposition {
+  text-align: center;
+}
+.obutton {
+  font-size: 1em;
+  padding: 10px;
+  color: #000;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.obutton:hover {
+  color:#000;
+  background: #06D85F;
+}
+.ooverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.ooverlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.opopup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.opopup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.opopup .oclose {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.opopup .oclose:hover {
+  color: #06D85F;
+}
+.opopup .ocontent {
+  max-height: 30%;
+  overflow: auto;
+}
+@media screen and (max-width: 700px){
+  .obox{
+    width: 70%;
+  }
+  .opopup{
+    width: 70%;
+  }
+}
+	</style>
+	
+<title>Pure CSS Popup Box | onanion</title>
+</head>
+<body>
+<header>
+	<center><h1>Pure CSS Popup Box</h1></center>
+	
+	<center>
+<a href="https://onanion.blogspot.com/2019/08/blog-post_71.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back To Article</a></center>
+<br/>
+	<br/>
+	<br/>
+</br>
+	</br>
+	</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="oposition">
+<a class="obutton" href="#popup1">Let me Pop up</a></div>
+
+<div id="popup1" class="ooverlay">
+<div class="opopup">
+<h2>
+Here i am</h2>
+<a class="oclose" href="#">&times;</a>
+<div class="ocontent">
+Thank to pop me out of that button
+</div>
+</div>
+</div>
+	</br>
+	</br>
+	</br>
+</br>
+</br>
+</body>
+</html>
