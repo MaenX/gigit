@@ -116,50 +116,58 @@ width: 70%;
 }
 }
 
-header h1 {
-width: 100%;
-margin-bottom: 10px;
-text-align: center;
-padding: 4em 0;
-color: #fff;
-font-weight: 700;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-shadow: 1px 1px 1px rgba(0,0,0,.004);
-font-size: 2rem;
-background: #000;
-font-family: "lato", sans-serif;
+a {
+font-family: 'Roboto', sans-serif;
+text-decoration: none
+}
+.link-cont {
+    position: relative;
+    font-size: 12px;
 }
 
-.link a {
-text-decoration: none;
-font-size: 14px;
-color: #7b80c9;
--webkit-transition: all .2s;
--moz-transition: all .2s;
-transition: all .2s;
+.link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #444;
 }
-a:hover {
-color: #6267b5;
+.link-wrapper {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+}
+.hover-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #666;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+.hover-link:hover:after {
+  transform: scaleX(1);
 }
 
 </style>
 	
-<title>Pure CSS Popup Box | onanion</title>
+<title>Pure CSS Popup Box</title>
 </head>
 <body>
-<header><h1>Pure CSS Popup Box</h1></header>
-
-<center><div class='link'><a href="https://onanion.blogspot.com/2019/08/blog-post_71.html"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back To Article</a></div></center>
-
-<br/>
-<br/>
-<br/>
-<br/>
+	
+<center>
+<div class="link-cont">
+<div class="link-wrapper">
+<a class="link hover-link" href="https://onanion.blogspot.com/2019/08/blog-post_71.html"><span style="color: #d4f78b;"><i aria-hidden="true" class="fa fa-long-arrow-left"></i> Back To Article</span></a></div>
+</div>
+</center>
 
 <div class="oposition">
 <a class="obutton" href="#popup1">Let me Pop up</a></div>
-
 <div id="popup1" class="ooverlay">
 <div class="opopup">
 <h2>
@@ -170,5 +178,6 @@ Thank to pop me out of that button, but now i'm done so you can close this windo
 </div>
 </div>
 </div>
+	
 </body>
 </html>
