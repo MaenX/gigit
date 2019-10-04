@@ -68,7 +68,234 @@ margin: 0 0 0.5em;
 .card-description > p {
 margin: 0;
 }
-	
+
+/*footer*/
+.end {
+    margin-bottom: 3em;
+    background: #111;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 5px 3px -4px rgba(0, 0, 0, 0.6);
+}
+.end > div {
+    padding: 1em;
+}
+
+.end > div.first {
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #191919;
+}
+.end > div.first > div {
+    max-width: 745px;
+}
+.end > div.last > .fnav > a, .end > div.last > .social > a {
+    padding: 0.8em;
+    display: block;
+    background: rgba(0,0,0,0.3);
+    font-size: 0.8em;
+    margin-left: 0.4em;
+    color: rgba(255, 255, 255, 0.8);
+    float: left;
+}
+.end > div.last > .fnav > a:first-child {
+    margin-left: 0;
+}
+.end > div.last > .fnav > a:hover, .end > div.last > .social > a:hover {
+    background: rgba(0,0,0, 0.8);
+    color: #fff;
+    text-decoration: none;
+}
+.end > div.last > .social > a > i {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.end > div.last > .social > a {
+    float: right;
+    border-radius: 50%;
+}
+.end > div.last > .social > a.fb > i {background-image: url("https://4.bp.blogspot.com/-josfSHI0DUQ/V4GIRec57kI/AAAAAAAABhk/jibxoRBQpZYzpLxs5L_0qW0b5uhy6T25QCLcB/s1600/fb.png")}
+.end > div.last > .social > a.tt > i {background-image: url("https://4.bp.blogspot.com/-TNtyxrUaiRM/V4GIRq5F0wI/AAAAAAAABho/TDaCStnYZrsza9Ja6ZjmGmFmMp_9Hpp-gCLcB/s1600/tt.png")}
+.end > div.last > .social > a.gg > i {background-image: url("https://2.bp.blogspot.com/-W5Pj8-GxvZQ/V4GIRUqk6ZI/AAAAAAAABhg/cW77d0WOpHwogv9BAUwzRoZZuGYLCuJQwCLcB/s1600/gg.png")}
+.end > div.last > .social > a.tb > i {background-image: url("https://2.bp.blogspot.com/-k8-SWv4e5yo/V4GIRdlWwSI/AAAAAAAABhc/xNbW8Pm9bBAFo7OBHfUw4uBF2Do_EsO4wCLcB/s1600/tb.png")}
+
+.copy {
+    text-align: center;
+    background: #eaeaea;
+    position: relative;
+    padding: 1.5em 0;
+    font-size: 0.8em;
+    color: #999;
+    font-weight: bold;
+}
+
+.copy:before {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAHCAYAAAAxrNxjAAAAbklEQVR42o2OSwrAIBBDvf/t/CDqRkV0o54hZQIthZbSRZgQXmZGAfilR2CMgdYan6D3HqUUylqLV9A5h9Yacs6Yc9JL8Q5yUwiBwN4btVb6lNIFqxijtHlurUVwjMHZeycsjJLwtklK4k/xFWEONCLrIQKtcekAAAAASUVORK5CYII=') repeat-x scroll 0 0 transparent;
+    content: "";
+    height: 7px;
+    position: absolute;
+    top: -7px;
+    width: 100%;
+    left: 0;
+}
+
+@media only screen and (max-width: 800px){
+nav {float: right;}
+.menu {display: none;}
+.menu.active {display: block;}
+span.drop {
+    display: block;
+    padding: 0.55em;
+    cursor: pointer;
+    text-align: center;
+
+}
+span.drop.open {
+    background: #121212;
+}
+span.drop > .imenu {
+    background-image: url("https://4.bp.blogspot.com/-wma4whogWXo/V4F38cuYpVI/AAAAAAAABgk/8GE_SlONaOomQO_fkyaPrvUTKG1uC-vkwCLcB/s1600/menu1x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    height: 36px;
+    width: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+.PageList > .drop {
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+.PageList> .drop > .imenu {
+    opacity: 0.5;
+}
+.PageList > .drop.open {background: #f1f1f1;}
+.PageList > .drop > .imenu {background-image: url("https://2.bp.blogspot.com/-ykBTnQFOKeM/V4F3vleZ4-I/AAAAAAAABgg/uE6BGqNuJeQ79ILUXEKS8ae-dhbSSTkKACLcB/s1600/arrow1.png");}
+.PageList > .drop.open > .imenu {background-image: url("https://4.bp.blogspot.com/-XgFALf_P4YA/V4F3vY5eLFI/AAAAAAAABgc/qUpLrGIY6YU24lHvrLKZN6jsoV0_LGA0gCLcB/s1600/arrow2.png");}
+.PageList > ul > li.active {
+    background: #e9e9e9;
+    border: 0 none;
+}
+.PageList > ul > li {
+    border: 0 none;
+    float: none;
+    display: block;
+}
+.PageList > ul > li:hover {background: #e9e9e9;}
+.PageList > ul > li > a {padding: 1.5em;}
+.PageList > ul > li.active:first-child {border: 0 none;}
+    
+nav > ul {
+    position: absolute;
+    right: 0;
+    top: 98%;
+    background: #212121;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+nav > ul > li {
+    float: none;
+    display: block;
+    padding: 0;
+}
+
+nav > ul > li > ul {
+    position: relative;
+    background: #121212;
+    top: auto;
+    left: 0;
+    box-shadow: 0 0 transparent;
+    border-radius: 0 0 0 0;
+}
+
+nav > ul > li > a, nav > ul > li > ul > li > a {padding: 2em;}
+.content, footer > div {padding: 0;}
+    
+.main {
+    border: 0 none;
+    background: none #fff;
+}
+.col, .side {
+    width: 100%;
+    float: none;
+}
+}
+
+@media only screen and (max-width: 700px){
+div > .banner:nth-child(5) {display: none;}
+.end > div {
+    text-align: center;
+}
+.end > div.last > .fnav > a {
+    margin: 0;
+    margin-bottom: 4px;
+}
+.end > div.last > .fnav > a, .end > div.last  > .social > a {
+    float: none;
+    padding: 1.4em;
+}
+.end > div.last > .social > a  {
+    display: inline-block;
+
+}
+.end > div.last > .social > a {
+    display: inline-block;
+    margin: 0;
+}
+}
+
+/*Imagen footer*/
+.end > div.first {
+    background-image: url("https://1.bp.blogspot.com/-39yclG5tHfs/V4F5YC8-97I/AAAAAAAABg4/1colBRl2gKwyzSUjJiNbnnD7g_WgD4euQCLcB/s1600/fbg-03.png");
+}
+
+
+.flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+       -moz-justify-content: space-between;
+            justify-content: space-between;
+}
+.wrap {
+    -webkit-flex-wrap: wrap;
+       -moz-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+.banner {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 1.1em;
+    float: left;
+}
+
+.banner.g{font-size: 1.6em;float: none;display: block;}
+
+.banner:before {
+    content: attr(data-banner);
+    position: absolute;
+    top: 0;left: 0;width: 100%;height: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-justify-content: center;
+       -moz-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+       -moz-align-items: center;
+            align-items: center;
+}
 </style>
 	
 <title>Anime Subtitle Indonesia | oalah</title>
@@ -148,6 +375,56 @@ margin: 0;
 	
 </ul>
 
+<!--footer-->
+<footer>
+<div>
+    <div class='end'>
+    <div class='first'>
+    <div class='flex wrap'>
+   <!--Banner 1-->
+    <a class='banner' data-banner='Banner' href='#banner'>
+        <img alt='banner' src='https://goo.gl/oVGKp8'/>
+    </a>
+   <!--Banner 2-->
+    <a class='banner' data-banner='Banner' href='#banner'>
+        <img alt='banner' src='https://goo.gl/oVGKp8'/>
+    </a>
+   <!--Banner 3-->
+    <a class='banner' data-banner='Banner' href='#banner'>
+        <img alt='banner' src='https://goo.gl/oVGKp8'/>
+    </a>
+   <!--Banner 4-->
+    <a class='banner' data-banner='Banner' href='#banner'>
+        <img alt='banner' src='https://goo.gl/oVGKp8'/>
+    </a>
+   <!--Banner 5-->
+    <a class='banner' data-banner='Banner' href='#banner'>
+        <img alt='banner' src='https://goo.gl/oVGKp8'/>
+    </a>
+    </div></div>
+    <div class='last'>
+        <div class='fnav'>
+            <a href='#url'>Elemento</a>
+            <a href='#url'>Elemento</a>
+            <a href='#url'>Elemento</a>
+            <a href='#url'>Elemento</a>
+        </div>
+        <div class='social'>
+            <a class='fb' href='#social'><i/></a>
+            <a class='tt' href='#social'><i/></a>
+            <a class='gg' href='#social'><i/></a>
+            <a class='tb' href='#social'><i/></a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<p class='copy'>
+<!--Esta obra está licenciada bajo la Licencia Creative Commons Atribución-NoComercial 4.0 Internacional. Para ver una copia de esta licencia, visita http://creativecommons.org/licenses/by-nc/4.0/-->
+<data:blog.title/> &#169; 2016 &#8212; Potenciado por <a href='//www.blogger.com' rel='nofollow' target='_blank'>Blogger</a> &#8212; Diseñado por <a data-rel='cc:attributionName' href='http://www.zkreations.com' property='cc:attributionName' rel='nofollow' target='_blank'>zkreations</a>
+</p>
+
+</footer>
 <script type='text/javascript'>
 // This is "probably" IE9 compatible but will need some fallbacks for IE8
 // - (event listeners, forEach loop)
