@@ -2,310 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" type="image/png" sizes="32x32" href="https://4.bp.blogspot.com/-gzglVSg12mk/XYxxTERnMnI/AAAAAAAAAvc/U8QCbIOLRk091S6dgTSz5nBzdL6qnFruwCLcBGAsYHQ/s1600/onanion.png">
 	
 <style>
-*,
-:before,
-:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  height: 100vh;
-  max-height: 100vh;
+  --background: #f5f6fa;
+  --foreground: #fff;
+  box-sizing: border-box;
+  background: var(--background);
   margin: 0;
-  font-family: Roboto;
-  overflow: hidden;
+}
+body * {
+  box-sizing: inherit;
+  color: inherit;
+}
+body.dark {
+  --background: #1c2833;
+  --foreground: #283845;
+  color: white;
 }
 
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.overlay.active {
-  visibility: visible;
-  z-index: 75;
-}
-
-.header {
-  background: #FFF;
+.fab {
+  background: orange;
+  width: 56px;
   height: 56px;
-  width: 100vw;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  display: inline-flex;
-  transition: box-shadow .2s;
-}
-.header.shadow {
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
-}
-.header .slider {
-  background: dodgerblue;
-  height: 5px;
-  width: calc(50vw - 28px);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-  will-change: transform;
-}
-.header .slider.right {
-  -webkit-transform: translateX(calc(50vw - 28px));
-          transform: translateX(calc(50vw - 28px));
-}
-.header .tab {
-  height: 100%;
-  width: calc(50vw - 28px);
-  padding: 20px 0;
-  color: dodgerblue;
-  font: 400 16px/16px Roboto;
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-  cursor: default;
-}
-.header .more {
-  background: #FFF url("https://cbwconline.com/IMG/Codepen/More.svg") center no-repeat;
-  height: 40px;
-  width: 40px;
+  bottom: 20px;
+  right: 20px;
   border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
-}
-.header .more:hover {
-  background-color: #EEE;
+  z-index: 2;
 }
 
-.menu {
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-  display: inline-block;
-  background: #EEE;
-  position: fixed;
-  top: 28px;
-  right: 35px;
-  pointer-events: none;
-  z-index: 100;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  -webkit-transform-origin: top right;
-          transform-origin: top right;
-  transition: .15s;
+section {
+  padding: 56px;
+  font-family: sans-serif;
 }
-.menu.active {
-  pointer-events: auto;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-.menu li {
-  padding: 12px 16px;
-  list-style: none;
-  font: 300 16px Roboto;
-  cursor: pointer;
-  transition: .3s;
-}
-.menu li:hover {
-  background: #e1e1e1;
+@media (max-width: 780px) {
+  section {
+    padding: 36px 10px;
+  }
 }
 
-.page {
-  min-height: calc(100vh - 56px);
-  max-height: calc(100vh - 56px);
-  width: 100%;
-  position: fixed;
-  top: 56px;
-  left: 0;
-  background: #E4E4E4;
-  will-change: transform;
-  -webkit-overflow-scrolling: touch;
+h1 {
+  font-size: calc(28px + (50 - 28) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 2;
+  margin: 0;
 }
 
-.main {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-  overflow-Y: scroll;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+.container {
+  --grid: 180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid), 1fr));
+  grid-gap: 16px;
 }
-.main.disabled {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+@media (max-width: 780px) {
+  .container {
+    --grid: 170px;
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    --grid: 130px;
+  }
 }
 
 .card {
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
-  flex: auto;
-  align-self: flex-start;
-  background: dodgerblue;
-  height: 256px;
-  width: 200px;
-  min-width: 175px;
-  max-width: 225px;
-  margin: 10px;
+  background: var(--foreground);
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+.card:hover .cta {
+  opacity: 1;
+}
+.card .image-wrapper {
   position: relative;
-  transition: box-shadow .2s;
-}
-.card:nth-child(1) {
-  background-color: #F44336;
-}
-.card:nth-child(2) {
-  background-color: #E91E63;
-}
-.card:nth-child(3) {
-  background-color: #9C27B0;
-}
-.card:nth-child(4) {
-  background-color: #673AB7;
-}
-.card:nth-child(5) {
-  background-color: #3F51B5;
-}
-.card:nth-child(6) {
-  background-color: #2196F3;
-}
-.card:nth-child(7) {
-  background-color: #03A9F4;
-}
-.card:nth-child(8) {
-  background-color: #00BCD4;
-}
-.card:nth-child(9) {
-  background-color: #009688;
-}
-.card:nth-child(10) {
-  background-color: #4CAF50;
-}
-.card:nth-child(11) {
-  background-color: #8BC34A;
-}
-.card:nth-child(12) {
-  background-color: #FFEB3B;
-}
-.card:nth-child(13) {
-  background-color: #FFC107;
-}
-.card:nth-child(14) {
-  background-color: #FF9800;
-}
-.card:nth-child(15) {
-  background-color: #FF5722;
-}
-.card:nth-child(16) {
-  background-color: #795548;
-}
-.card:hover {
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
-}
-.card:after {
-  content: 'Lorem Ipsum...';
-  background: #FFF;
-  height: 56px;
-  width: 100%;
-  padding: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 .card img {
+  display: block;
   width: 100%;
 }
-
-.tags {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  opacity: 0;
-  transition: opacity 0s, .3s;
-}
-.tags.active {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  transition: opacity 0s .3s, .3s;
-}
-.tags h3 {
-  padding-top: 56px;
-  color: #666;
-  font: 500 22px Roboto;
-  text-align: center;
-}
-.tags .tag {
-  height: 70px;
-  width: 70px;
-  background: url("https://cbwconline.com/IMG/Codepen/Tag.png") center/contain no-repeat;
-  margin: 28px auto;
-}
-.tags p {
-  color: #666;
-  text-align: center;
-  font: 500 16px Roboto;
-}
-
-.ghost {
-  height: 0 !important;
-  margin: 0 10px !important;
-}
-.ghost:after {
-  display: none;
-}
-
-.ripple {
-  overflow: hidden;
-  position: relative;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-}
-.ripple .rippling {
+.card .cta {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
   position: absolute;
+  cursor: pointer;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  background-color: #000;
-  pointer-events: none;
-  padding: 0;
-  margin: 0;
-  opacity: .2;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-          transform: translate3d(-50%, -50%, 0);
-  will-change: width, height;
+  display: flex;
+  opacity: 0;
+  transition: .3s;
 }
-
-@media (max-width: 756px) {
-  .bottom {
-    display: block;
-    height: 20px;
-    width: 100%;
-  }
-
-  .card {
-    width: 25vw;
-    min-width: 100px;
-    max-width: 28vw;
-  }
+.card .cta:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 480px) {
-  .card {
-    width: 35vw;
-    min-width: 80px;
-    max-width: 45vw;
-  }
+.card .cta svg {
+  display: block;
+  fill: #fff;
+  width: 20px;
+  margin: auto;
+}
+.card .details {
+  padding: 16px;
+}
+.card a {
+  display: block;
+  text-decoration: none;
+  line-height: 1.8;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card a:hover {
+  text-decoration: underline;
+}
+.card a.title {
+  font-weight: bold;
+}
+.card a.sub-title {
+  font-size: 14px;
 }
 
 
@@ -316,132 +137,359 @@ body {
 <body>
 
 
-<div class="overlay"></div>
-<div class="menu">
-  <ul>
-    <li class="ripple">Select...</li>
-    <li class="ripple">Switch account</li>
-    <li class="ripple">Send feedback</li>
-    <li class="ripple">Help</li>
-  </ul>
-</div>
-<div class="header">
-  <div class="slider"></div>
-  <div class="tab one ripple">saved items</div>
-  <div class="tab two ripple">tags</div>
-  <div class="more"></div>
-</div>
-<div class="page main">
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ripple"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="card ghost"></div>
-  <div class="bottom"></div>
-</div>
-<div class="page tags">
-  <h3>Add saved images to a tag</h3>
-  <div class="tag"></div>
-  <p>Tags are where you add and organize your saved images</p>
-</div>
+
+<div class="fab"></div>
+<section>
+  <h1>Albums</h1>
+  <div class="container">
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-wrapper">
+        <button class="cta">
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+            <g>
+              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+            </g>
+          </svg>
+        </button><img src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F73cbebfa17481e4fcb223f3399439046.960x960x1.jpg"/>
+      </div>
+      <div class="details">
+        <div> <a class="title" href="#">The Beast You Feed</a></div>
+        <div> <a class="sub-title" href="#">Veridia</a></div>
+      </div>
+    </div>
+  </div>
+</section>
  
-<script>// Menu
-
-$(".more, .overlay").on('click', function() {
-  $(".menu, .overlay").toggleClass("active");
-});
-
-// Tabs & Windows
-
-$(".tab.one").on('click', function() {
-  $(".slider").removeClass("right");
-  $(".tags").removeClass("active");
-  $(".main").removeClass("disabled")
-});
-
-$(".tab.two").on('click', function() {
-  $(".slider").addClass("right");
-  $(".tags").addClass("active");
-  $(".main").addClass("disabled")
-  $(".main").removeClass("current")
-});
-
-// Card Height
-
-$(window).resize(function() {
-  $('.card').each(function() {
-    $(this).height($(this).width() + 56);
-  });
-}).resize();
-
-// Header Shadow
-
-$(".main").scroll(function() {
-  if ($(this).scrollTop() >= 10) {
-    $(".header").addClass("shadow");
-  } else {
-    $(".header").removeClass("shadow");
-  }
-});
-
-// Ripple Effect
-
-$(document).on('click', '.ripple', function(e) {
-  
-  var $ripple = $('<span class="rippling" />'),
-      $button = $(this),
-      btnOffset = $button.offset(),
-      xPos = e.pageX - btnOffset.left,
-      yPos = e.pageY - btnOffset.top,
-      size = 0,
-      animateSize = parseInt(Math.max($button.width(), $button.height()) * Math.PI);
-
-  $ripple.css({
-      top: yPos,
-      left: xPos,
-      width: size,
-      height: size,
-      backgroundColor: $button.attr("ripple-color")
-    })
-    .appendTo($button)
-    .animate({
-      width: animateSize,
-      height: animateSize,
-      opacity: 0
-    }, 500, function() {
-      $(this).remove();
-    });
-});
-
-// Scroll to top when 'Home' key is pressed
-
-$(window).keyup(function (e) {
-  if (e.keyCode == 36) {
-    $('.page').animate({ scrollTop: 0 }, 0);
-  }
-});</script>
+<script>document.querySelector('.fab').onclick = function () {document.querySelector('body').classList.toggle('dark');};</script>
 </body>
 </html>
