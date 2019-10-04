@@ -46,6 +46,21 @@ body {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {
+  .site-pusher,
+  .site-container {
+    height: 100%;
+  }
+
+  .site-container {
+    overflow: hidden;
+  }
+
+  .site-pusher {
+    transition-duration: 0.3s;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
   .header {
     position: static;
   }
@@ -172,6 +187,9 @@ margin: 0;
 </head>
 <body>
 
+<div class="site-container">
+<div class="site-pusher">
+	  
 <header class="header">
       
 <a href="#" class="header__icon" id="header__icon"></a>
@@ -251,6 +269,8 @@ margin: 0;
 </ul>
 
 <div class="site-cache" id="site-cache"></div>
+</div>
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	
 <script type='text/javascript'>
