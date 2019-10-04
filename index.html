@@ -139,7 +139,7 @@ background-color: rgba(0, 0, 0, 0.6);
 /* Lazy Load Styles */
 .card-image {
 display: block;
-min-height: 10rem; /* layout hack */
+min-height: 222px; /* layout hack */
 background: #fff center center no-repeat;
 background-size: cover;
 filter: blur(3px); /* blur the lowres image */
@@ -147,6 +147,7 @@ filter: blur(3px); /* blur the lowres image */
 .card-image > img {
 display: block;
 width: 100%;
+max-width: 154px;
 opacity: 0; /* visually hide the img element */
 }
 .card-image.is-loaded {
@@ -166,8 +167,8 @@ list-style: none;
 .card {
 display: inline-block;
 width: 90%;
-max-width: 10rem;
-margin: 0;
+max-width: 222px;
+margin: 5px;
 font-size: 1rem;
 text-decoration: none;
 overflow: hidden;
