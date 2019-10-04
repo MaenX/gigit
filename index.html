@@ -7,6 +7,8 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
 
 <style>
+/* VARIABLES */
+/* BASE */
 html,
 body {
   font-family: 'Roboto', sans-serif;
@@ -16,7 +18,22 @@ body {
   margin: 0;
   padding: 0;
 }
-	
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 20px;
+}
+
+.site-content {
+  padding-top: 66px;
+}
+
 /* HEADER */
 .header {
   position: fixed;
@@ -60,6 +77,17 @@ body {
     transition-duration: 0.3s;
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
+  }
+
+  .site-content {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   .header {
@@ -118,6 +146,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
   }
 }
+
 
 /* Lazy Load Styles */
 .card-image {
@@ -189,23 +218,24 @@ margin: 0;
 <body>
 
 <div class="site-container">
-<div class="site-pusher">
+  <div class="site-pusher">
+    
+    <header class="header">
+      
+      <a href="#" class="header__icon" id="header__icon"></a>
+      <a href="#" class="header__logo">Logo</a>
+      
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </nav>
+      
+    </header>
 
-<header class="header">
-<a href="#" class="header__icon" id="header__icon"></a>
-<a href="#" class="header__logo">Logo</a>
-<nav class="menu">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Blog</a>
-<a href="#">Contact</a>
-</nav>  
-</header>
-
-<div class="site-cache" id="site-cache"></div>
-</div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div class="site-content">
+      <div class="container">
 
 <ul class="card-list">
 
@@ -270,6 +300,14 @@ margin: 0;
 </li>
 	
 </ul>
+
+      </div> <!-- END container -->
+    </div> <!-- END site-content -->
+    <div class="site-cache" id="site-cache"></div>
+  </div> <!-- END site-pusher -->
+</div> <!-- END site-container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	
 <script type='text/javascript'>
 // This is "probably" IE9 compatible but will need some fallbacks for IE8
