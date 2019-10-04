@@ -7,207 +7,467 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 
 <style>
+/* -----------------------------------------------------
+  Material Design Mediahawkz.com Fixed & Responsive Header with Sidebar
+  CodePen URL: https://codepen.io/rkchauhan/pen/VamPVa
+  By: Ravikumar Chauhan
+  
+  Find me on:-
+  * Twitter: https://twitter.com/rkchauhan01
+  * Facebook: https://www.facebook.com/ravi032chauhan
+  * GitHub: https://github.com/rkchauhan
+  * CodePen: https://codepen.io/rkchauhan
+  * UpLabs: http://uplabs.com/rkchauhan01
+
+  Thanks to:-
+  * Google Material design - https://www.google.com/design/spec/material-design/introduction.html
+  * Google Material Color - https://www.google.com/design/spec/style/color.html
+  * Google Material Icons - https://design.google.com/icons/
+  * Roboto Font - https://google.com/fonts/specimen/Roboto
+  * Font Awesome - http://fontawesome.io
+  * jQuery - https://jquery.com
+-------------------------------------------------------- */
+/* -----------------------------------------------------
+  Body
+-------------------------------------------------------- */
 body {
-	margin:0;
-	padding:0;
-	background:#fff;
-	font-family:'Montserrat',sans-serif;
-	font-size:12px;
+  margin: 0;
+  padding: 0;
+  color: #646360;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #eee;
 }
-ul {
-	margin:0;
-	padding:0;
-	text-decoration:none;
-	list-style:none;
+
+*, *::after, *::before {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
-li {
-	padding:0;
-	margin:0;
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
-nav {
-	text-align:center;
-	width:100%;
-	position:relative;
-	height:auto;
-	overflow:hidden;
-	background:none;
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
-nav ul {
-	text-align:center;
+
+a {
+  color: #03a9f4;
+  outline: none;
+  text-decoration: none;
 }
-nav ul li {
-	display:inline-block;
+a:hover {
+  text-decoration: underline;
 }
-nav ul li a {
-	color:#333;
-	display:inline-block;
-	padding:1em 3em;
-	text-decoration:none;
-	border-bottom:2px solid #fff;
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-	font-size:16px;
-}
-nav ul li a:hover {
-	color: #34B484;
-}
-/*styling open close button*/
-.button {
-	display:inline;
-	position:absolute;
-	right:50px;
-	top:6px;
-	z-index:999;
-	font-size:30px;
-}
-.button a {
-	text-decoration:none;
-}
-.btn-open:after {
-	color:#333;
-	content:"\f0c9";
-	font-family:"FontAwesome";
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-}
-.btn-open:hover:after {
-	color:#34B484;
-}
-.btn-close:after {
-	color:#fff;
-	content:"\f00d";
-	font-family:"FontAwesome";
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
-}
-.btn-close:hover:after {
-	color: #34B484;
-}
-/*overlay*/
+
 .overlay {
-	display:none;
-	position:fixed;
-	top:0;
-	height:100%;
-	width:100%;
-	background:#333;
-	overflow:auto;
-	z-index:99;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.285);
+  z-index: 1001;
 }
-.wrap {
-	color:#e9e9e9;
-	text-align:center;
-	max-width:90%;
-	margin:0 auto;
+
+/* For Typography */
+.ul-base {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.wrap ul.wrap-nav {
-	border-bottom:1px solid #575757;
-	text-transform:capitalize;
-	padding:150px 0px 100px;
+
+/* -----------------------------------------------------
+Clearfix
+-------------------------------------------------------- */
+.clearfix {
+  *zoom: 1;
 }
-.wrap ul.wrap-nav li {
-	font-size:20px;
-	display:inline-block;
-	vertical-align:top;
-	width:24%;
-	position:relative;
+.clearfix::after {
+  content: '';
+  display: table;
+  line-height: 0;
+  clear: both;
 }
-.wrap ul.wrap-nav li a {
-	color:#34B484;
-	display:block;
-	padding:8px 0;
-	text-decoration:none;
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
+
+/* -----------------------------------------------------
+   Header
+-------------------------------------------------------- */
+header {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
 }
-.wrap ul.wrap-nav li a:hover {
-	color:#f0f0f0;
+header .header-inner {
+  width: 100%;
+  height: 64px;
+  color: #fff;
+  padding: 0 20px;
+  background-color: #3f51b5;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
 }
-.wrap ul.wrap-nav ul {
-	padding:20px 0;
+header .nav-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  margin: 12px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-.wrap ul.wrap-nav ul li {
-	display:block;
-	font-size:13px;
-	width:100%;
-	color:#e9e9e9;
+header .nav-btn.nav-slider {
+  float: left;
 }
-.wrap ul.wrap-nav ul li a {
-	color:#f0f0f0;
+header .nav-btn.search {
+  display: none;
 }
-.wrap ul.wrap-nav ul li a:hover {
-	color:#34B484;
+header .nav-btn i {
+  vertical-align: middle;
 }
-.social {
-	font-size:25px;
-	padding:20px;
+header .header-logo {
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+  padding: 21px 38px 21px 5px;
 }
-.social p {
-	margin:0;
-	padding:20px 0 5px 0;
-	line-height:30px;
-	font-size:13px;
+header .header-logo img {
+  display: block;
+  max-height: 21px;
+  vertical-align: middle;
 }
-.social p a {
-	color:#34B484;
-	text-decoration:none;
-	margin:0;
-	padding:0;
+header .header-categories {
+  display: block;
+  position: relative;
+  float: left;
+  border-left: 1px solid rgba(255, 255, 255, 0.157);
 }
-.social-icon {
-	width:80px;
-	height:50px;
-	background:#e9e9e9;
-	color:#333;
-	display:inline-block;
-	margin:0 20px;
-	transition-property:all .2s linear 0s;
-	-moz-transition:all .2s linear 0s;
-	-webkit-transition:all .2s linear 0s;
-	-o-transition:all .2s linear 0s;
+header .header-search {
+  float: left;
+  display: block;
+  position: relative;
+  width: calc(100% - 620px);
+  height: 64px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.157);
+  border-right: 1px solid rgba(255, 255, 255, 0.157);
 }
-.social-icon:hover {
-	background:#34B484;
-	color:#f0f0f0;
+header .header-search .search {
+  display: block;
+  position: relative;
+  width: calc(100% - 35px);
+  margin: 0 auto;
 }
-.social-icon i {
-	margin-top:12px;
+header .header-search .search i {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 28px;
+  cursor: pointer;
 }
-@media screen and (max-width:48em) {
-	.wrap ul.wrap-nav>li {
-		width:100%;
-		padding:20px 0;
-		border-bottom:1px solid #575757;
-	}
-	.wrap ul.wrap-nav {
-		padding:30px 0px 0px;
-	}
-	nav ul {
-		opacity:0;
-		visibility:hidden;
-	}
-	.social {
-		color:#c1c1c1;
-		font-size:25px;
-		padding:15px 0;
-	}
-	.social-icon {
-		width:100%;
-		height:50px;
-		background:#fff;
-		color:#333;
-		display:block;
-		margin:5px 0;
-	}
+header .header-search .search input[type="search"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 15px 0 50px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
+header .header-search .search ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+header .header-search .search ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+header .header-search .search :-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+header .header-search .search :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+header .header-menu {
+  float: right;
+}
+header .header-menu ul {
+  height: 64px;
+}
+header .header-menu ul li {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 12px;
+  line-height: 64px;
+}
+header .header-menu ul li a {
+  color: #fff;
+  font-size: 17px;
+  padding: 4px;
+}
+header .header-menu ul li a:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+@media only screen and (max-width: 1024px) {
+  header .header-categories {
+    display: none;
+  }
+  header .header-search {
+    width: calc(100% - 440px);
+  }
+}
+@media only screen and (max-width: 860px) {
+  header .header-search {
+    display: none;
+  }
+  header .header-menu ul li:last-child {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header .header-inner {
+    padding: 0 12px;
+    text-align: center;
+  }
+  header .nav-btn {
+    background-color: rgba(0, 0, 0, 0.175);
+  }
+  header .header-logo {
+    float: right;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  header .header-menu {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------------
+   Nav
+-------------------------------------------------------- */
+nav {
+  overflow-y: auto;
+  position: fixed;
+  top: 0px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  color: #fff;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  z-index: 1002;
+}
+nav .nav-header {
+  display: block;
+  background-color: #3f51b5;
+}
+nav .nav-header .logo-wrap {
+  padding: 1.7em 1em;
+}
+nav .nav-header .logo-wrap .logo-icon {
+  display: inline-block;
+  text-decoration: none;
+}
+nav .nav-header .logo-wrap .logo-icon img {
+  display: block;
+  border-radius: 50%;
+}
+nav .nav-header .logo-wrap .logo-text {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2em;
+  vertical-align: 12px;
+  margin-left: 8px;
+  text-decoration: none;
+}
+nav .nav-header .nav-search {
+  position: relative;
+  height: 40px;
+}
+nav .nav-header .nav-search .search {
+  display: block;
+  position: relative;
+}
+nav .nav-header .nav-search .search i {
+  position: absolute;
+  top: 8px;
+  right: .7em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+  cursor: pointer;
+}
+nav .nav-header .nav-search .search input[type="search"] {
+  width: 100%;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  padding: 0 48px 0 20px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+nav .nav-header .nav-search .search ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+nav .nav-header .nav-search .search ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav .nav-header .nav-search .search :-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav .nav-header .nav-search .search :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+nav .nav-categories li {
+  display: block;
+  position: relative;
+}
+nav .nav-categories li a {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  color: #5c5c5c;
+  padding: .625em 1.3em;
+  text-decoration: none;
+}
+nav .nav-categories li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+nav.open {
+  left: 0px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.275);
+  opacity: 1;
+}
+nav .nav-separator {
+  width: 100%;
+  height: 1px;
+  margin: 7px 0;
+  background-color: rgba(0, 0, 0, 0.175);
+}
+nav .nav-link-title {
+  display: block;
+  color: #3f51b5;
+  font-size: 1rem;
+  padding: .5em 1.3em;
+}
+nav .social {
+  display: flex;
+  margin: 4px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.155);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.155);
+}
+nav .social li {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 28px;
+  flex-direction: row;
+  border-right: 1px solid rgba(0, 0, 0, 0.175);
+}
+nav .social li:last-child {
+  border-right: 0;
+}
+nav .social li a {
+  display: block;
+  color: #5c5c5c;
+  font-size: 15px;
+  padding: 2px;
+  text-decoration: none;
+}
+nav .social li a.twitter:hover {
+  color: #00baf0;
+}
+nav .social li a.facebook:hover {
+  color: #3b5997;
+}
+nav .social li a.google-plus:hover {
+  color: #c43c2c;
+}
+nav .social li a.rss:hover {
+  color: #ff6600;
+}
+nav .copyright {
+  display: block;
+  color: #5c5c5c;
+  text-align: center;
+  padding: .5em 0 1em;
+}
+nav .copyright span {
+  display: block;
+  width: 100%;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+/* -----------------------------------------------------
+   Dropdown Menu
+-------------------------------------------------------- */
+li.dropdown {
+  display: inline-block;
+  position: relative;
+}
+li.dropdown a {
+  display: block;
+  height: 64px;
+  padding: 0 35px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 64px;
+  text-decoration: none;
+}
+li.dropdown a i {
+  vertical-align: middle;
+}
+li.dropdown .dropdown-menu {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  min-width: 240px;
+  margin: 2px 0;
+  padding: 5px 0;
+  text-align: left;
+  border-radius: 2px;
+  background-color: #3f51b5;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+li.dropdown .dropdown-menu li {
+  display: block;
+}
+li.dropdown .dropdown-menu li a {
+  display: block;
+  height: 40px;
+  font-size: 1em;
+  line-height: 40px;
+  text-decoration: none;
+}
+li.dropdown.open .dropdown-menu {
+  display: block;
+}
+
 
 /* Lazy Load Styles */
 .card-image {
@@ -277,78 +537,96 @@ margin: 0;
 <title>Anime Subtitle Indonesia | oalah</title>
 </head>
 <body>
+<!-- nav -->
+<nav class="sidebar">
+  <div class="nav-header">
+    <div class="logo-wrap">
+      <a class="logo-icon" href="http://www.mediahawkz.com/"><img alt="logo-icon" src="http://mediahawkz.com/assets/images/favicons/apple-icon-72x72.png" width="40"></a>
+      <a class="logo-text" href="http://www.mediahawkz.com/">MediahawkZ</a>
+    </div>
 
-<nav>
-<ul>
-	<li><a href="https://facebook.com">About</a></li>
-	<li><a href="#">Services</a></li>
-	<li><a href="#">Work</a></li>
-</ul>
-<div class="button">
-	<a class="btn-open" href="#"></a>
-</div>
-</nav>
-<div class="overlay">
-	<div class="wrap">
-		<ul class="wrap-nav">
-			<li><a href="#">About</a>
-			<ul>
-				<li><a href="#">About Company</a></li>
-				<li><a href="#">Designers</a></li>
-				<li><a href="#">Developers</a></li>
-				<li><a href="#">Pets</a></li>
-			</ul>
-			</li>
-			<li><a href="#">Services</a>
-			<ul>
-				<li><a href="https://www.google.hr/">Web Design</a></li>
-				<li><a href="#">Development</a></li>
-				<li><a href="#">Apps</a></li>
-				<li><a href="#">Graphic design</a></li>
-				<li><a href="#">Branding</a></li>
-			</ul>
-			</li>
-			<li><a href="#">Work</a>
-			<ul>
-				<li><a href="#">Web</a></li>
-				<li><a href="#">Graphic</a></li>
-				<li><a href="#">Apps</a></li>
-			</ul>
-			</li>
-		</ul>
-		<div class="social">
-			<a href="http://mario-loncarek.from.hr/">
-			<div class="social-icon">
-				<i class="fa fa-facebook"></i>
-			</div>
-			</a>
-			<a href="#">
-			<div class="social-icon">
-				<i class="fa fa-twitter"></i>
-			</div>
-			</a>
-			<a href="#">
-			<div class="social-icon">
-				<i class="fa fa-codepen"></i>
-			</div>
-			</a>
-			<a href="#">
-			<div class="social-icon">
-				<i class="fa fa-behance"></i>
-			</div>
-			</a>
-			<a href="#">
-			<div class="social-icon">
-				<i class="fa fa-dribbble"></i>
-			</div>
-			</a>
-			<p>
-				From: Zagreb, Croatia<br>
-				 Site: <a href="http://mario-loncarek.from.hr/">mario-loncarek.from.hr</a>
-			</p>
-		</div>
-	</div>
-</div>
+    <div class="nav-search">
+      <div class="search">
+        <i class="material-icons">search</i>
+        <input type="search" name="search" placeholder="Search">
+      </div>
+    </div>
+  </div>
+  <ul class="nav-categories ul-base">
+    <li><a href="http://www.mediahawkz.com/topic/technology">Technology</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/science">Science</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/speak-up">Speak up</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/general">General</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/lifestyle">Lifestyle</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/world">World</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/business">Business</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/entertainment">Entertainment</a></li>
+    <li><a href="http://www.mediahawkz.com/topic/sports">Sports</a></li>
+  </ul>
+  <ul class="social ul-base">
+    <li><a href="https://twitter.com/MediahawkZ" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.facebook.com/mediahawkz" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="https://plus.google.com/+MediahawkzIndia" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+    <li><a href="http://www.mediahawkz.com/rss" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+  </ul>
+  <div class="copyright">
+    <span>&copy; 2016 <a href="http://www.mediahawkz.com" class="link">MediahawkZ.com</a> Made in India</span>
+    <span>Designed by <a href="https://twitter.com/rkchauhan01" target="_blank">Ravikumar Chauhan</a></span>
+  </div>
+</nav><!-- @end nav -->
+
+<!-- header -->
+<header>
+  <div class="header-inner clearfix">
+    <div class="nav-btn nav-slider">
+      <i class="material-icons">menu</i>
+    </div>
+    <div class="header-logo">
+      <a href="http://www.mediahawkz.com/"><img alt="logo" src="http://mediahawkz.com/assets/images/logos/logo-v2-1.png"></a>
+    </div>
+    <div class="header-categories">
+      <ul class="ul-base">
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#"><span>Categories</span> <i class="material-icons">keyboard_arrow_down</i></a>
+          <ul class="dropdown-menu ul-base">
+            <li><a href="http://www.mediahawkz.com/topic/technology">Technology</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/science">Science</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/speak-up">Speak up</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/general">General</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/lifestyle">Lifestyle</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/world">World</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/business">Business</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/entertainment">Entertainment</a></li>
+            <li><a href="http://www.mediahawkz.com/topic/sports">Sports</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="header-search">
+      <div class="search">
+        <i class="material-icons">search</i>
+        <input type="search" name="search" placeholder="Search">
+      </div>
+    </div>
+    <div class="header-menu">
+      <ul class="ul-base">
+        <li><a href="https://twitter.com/MediahawkZ" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/mediahawkz" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/+MediahawkzIndia" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="http://www.mediahawkz.com/rss" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a href="http://www.mediahawkz.com/admin">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</header><!-- @end header -->
+
+<!-- Main content -->
+<main role="main"></main><!-- @end main -->
+
+<!-- Footer -->
+<footer></footer><!-- @end footer -->
+
+<div class="overlay"></div>
 
 <ul class="card-list">
 
@@ -450,16 +728,33 @@ card_image.className = card_image.className + ' is-loaded';
 }
 </script>
 
-<script>$(document).ready(function(){
-    $(".button a").click(function(){
-        $(".overlay").fadeToggle(200);
-       $(this).toggleClass('btn-open').toggleClass('btn-close');
-    });
+<script>$('.dropdown-toggle').on('click', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+
+  var self = $(this);
+  if(self.is('.disabled, :disabled')) {
+    return false;
+  }
+  self.parent().toggleClass("open");
 });
-$('.overlay').on('click', function(){
-    $(".overlay").fadeToggle(200);   
-    $(".button a").toggleClass('btn-open').toggleClass('btn-close');
-    open = false;
+
+$(document).on('click', function(e) {
+  if($('.dropdown').hasClass('open')) {
+    $('.dropdown').removeClass('open');
+  }
+});
+
+$('.nav-btn.nav-slider').on('click', function() {
+  $('.overlay').show();
+  $('nav').toggleClass("open");
+});
+
+$('.overlay').on('click', function() {
+  if($('nav').hasClass('open')) {
+    $('nav').removeClass('open');
+  }
+  $(this).hide();
 });</script>
 
 </body>
