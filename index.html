@@ -329,6 +329,19 @@ card_image.className = card_image.className + ' is-loaded';
 </script>
 
 <script type='text/javascript'>
+// fix menu to page-top once user starts scrolling
+window.addEventListener('scroll', function () {
+  var docNav = get('.doc__nav > ul');
+
+  if( docNav) {
+    if (window.pageYOffset > 63) {
+      docNav.classList.add('fixed');
+    } else {
+      docNav.classList.remove('fixed');
+    }
+  }
+});
+
 // responsive navigation
 var topNav = get('.menu');
 var icon = get('.toggle');
