@@ -7,144 +7,146 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 
 <style>
+/* VARIABLES */
+/* BASE */
 html,
 body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
   font-family: 'Roboto', sans-serif;
-  color: #2d2d2d;
-  letter-spacing: 0.2px;
-  /* Search Active */
-}
-body.search-active {
-  overflow: hidden;
-}
-body.search-active .search-input {
-  opacity: 1;
-  transform: none;
-  pointer-events: all;
-}
-body.search-active .icon-close {
-  opacity: 1;
-  transform: rotate(-90deg);
-}
-body.search-active .control {
-  cursor: default;
-}
-body.search-active .control .btn-material {
-  transform: scale(70);
-}
-body.search-active .control .icon-material-search {
-  opacity: 0;
+  font-size: 1em;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* Close Icon */
-.icon-close {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  color: #FFF;
-  cursor: pointer;
-  font-size: 70px;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-.icon-close:hover {
-  transform: rotate(0);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Search Input */
-.search-input {
-  height: 80px;
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  margin-top: -40px;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(40px, 0);
-  transition: all 0.3s ease-in-out;
-}
-.search-input input {
-  color: #fff;
-  font-size: 54px;
-  border: 0;
-  background: transparent;
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  outline: 0;
-  font-weight: 200;
-}
-.search-input ::-webkit-input-placeholder {
-  color: #EEE;
-}
-.search-input :-moz-placeholder {
-  color: #EEE;
-  opacity: 1;
-}
-.search-input ::-moz-placeholder {
-  color: #EEE;
-  opacity: 1;
-}
-.search-input :-ms-input-placeholder {
-  color: #EEE;
-}
-
-/* Container */
 .container {
-  padding-right: 50px;
-  padding-left: 50px;
-  position: relative;
-}
-.container.container-dark {
-  background: #22313F;
-  color: #FFF;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 20px;
 }
 
-/* Control btn */
-.control {
-  cursor: pointer;
-}
-.control .btn-material {
-  position: absolute;
-  top: -30px;
-  width: 60px;
-  height: 60px;
-  right: 60px;
-  border-radius: 100%;
-  box-sizing: border-box;
-  background: #e91e63;
-  outline: 0;
-  transform-origin: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.control .btn-material:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-.control .icon-material-search {
-  color: #FFF;
-  position: absolute;
-  top: -10px;
-  right: 78px;
-  transition: opacity 0.3s ease-in-out;
+.site-content {
+  padding-top: 66px;
 }
 
-/* Utilities */
-.p-y-md {
-  padding-top: 2.8rem;
-  padding-bottom: 2.8rem;
+/* HEADER */
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+  color: #fff;
+  background-color: #3f51b5;
 }
 
-/* Typo */
-h1,
-h2 {
-  font-weight: 300;
+.header__logo {
+  font-weight: 700;
+  padding: 0 25px;
+  float: left;
 }
+
+/* MENU */
+.menu {
+  float: left;
+}
+.menu a {
+  padding: 0 10px;
+}
+.menu a:hover {
+  color: #c5cae9;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  .site-pusher,
+  .site-container {
+    height: 100%;
+  }
+
+  .site-container {
+    overflow: hidden;
+  }
+
+  .site-pusher {
+    transition-duration: 0.3s;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  .site-content {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header {
+    position: static;
+  }
+
+  .header__icon {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+  }
+  .header__icon:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
+  }
+
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #3849a2;
+    /*    overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;*/
+    width: 250px;
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+  }
+  .menu a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #3f51b5;
+  }
+
+  .with--sidebar .site-pusher {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px);
+  }
+  .with--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
 
 
 /* Lazy Load Styles */
@@ -215,30 +217,71 @@ margin: 0;
 <title>Anime Subtitle Indonesia | oalah</title>
 </head>
 <body>
-<!-- page heading -->
-<div class='container container-dark p-y-md'>
-  <div class='header-content'>
-    <h1>Material Search Animation</h1>
-    <h2>Usign CSS Transitions</h2>
-  </div>
-</div>
 
+	<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
+</head>
 
-<!-- page content + floating button -->
-<div class='container p-y-md'>
-  <div class='control'>
-    <div class='btn-material'></div>
-    <i class='material-icons icon-material-search'>search</i>
-  </div>
+<div class="site-container">
+  <div class="site-pusher">
+    
+    <header class="header">
+      
+      <a href="#" class="header__icon" id="header__icon"></a>
+      <a href="#" class="header__logo">Logo</a>
+      
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </nav>
+      
+    </header>
 
-  <div id='h2'>by <a href="https://codepen.io/hone">Luca Dimola</a></div>
-</div>
+    <div class="site-content">
+      <div class="container">
+        
+        <h1>Responsive Navigation Bar</h1>
+        <p>Tutorial by Grafikart.fr 
+          <a href="https://www.youtube.com/watch?v=_X2N_yw9Boo" target="_blank" style="color: blue">https://www.youtube.com/watch?v=_X2N_yw9Boo</a>
+        </p>
+        <p>UI Color Palette from 
+          <a href="https://www.google.com/design/spec/style/color.html" target="_blank" style="color: blue">Google Material Design</a>
+        </p>
+        
+        <h2>Animals</h2>
+        <ul>
+          <li>Sabre-Toothed Tiger</li>
+          <li>Old English Sheepdog</li>
+          <li>Little Penguin</li>
+          <li>Striped Rocket Frog</li>
+          <li>Snapping Turtle</li>
+        </ul>
+        
+        <h2 style="background-color: #fff176; display: inline">Hint</h2>
+        <p>Resize the browser window to toggle</p>
+        
+        <h2>Breakfast</h2>
+        <figure>
+          <a href="http://commons.wikimedia.org/wiki/File:Grilled_ham_and_cheese_014.JPG" target="_blank">
+            <img src="http://upload.wikimedia.org/wikipedia/commons/5/50/Grilled_ham_and_cheese_014.JPG" alt="By Glenlarson at English Wikipedia (en.wikipedia) [Public domain], via Wikimedia Commons" style="width: 100%; height: auto;">
+          </a>
+          <figcaption style="font-size: smaller">Breakfast.01 - The picture above has cheese though, mine has no cheese.</figcaption>
+        </figure>
+        <p>I make ham sandwiches in the morning with toasted bread and a cup of fresh milk every weekend.</p>
+        <p>Bacon ipsum dolor sit amet beef kielbasa pancetta sirloin, landjaeger sausage kevin hamburger frankfurter ham.Consequat laborum ham hock culpa pork filet mignon kevin, ribeye leberkas sed tri-tip corned beef ut dolore exercitation.</p>
+        <p>Ground round chicken cow, tongue porchetta sirloin salami kielbasa pork prosciutto venison pork chop capicola.</p>
+        
+      </div> <!-- END container -->
+    </div> <!-- END site-content -->
+    <div class="site-cache" id="site-cache"></div>
+  </div> <!-- END site-pusher -->
+</div> <!-- END site-container -->
 
-<!-- full screen form controls -->
-<i class='icon-close material-icons'>close</i>
-<div class='search-input'>
-  <input class='input-search' placeholder='Start Typing' type='text'>
-</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
 <ul class="card-list">
 
 <li class="card">
@@ -339,13 +382,21 @@ card_image.className = card_image.className + ' is-loaded';
 }
 </script>
 
-<script>$('.control').click( function(){
-  $('body').addClass('search-active');
-  $('.input-search').focus();
-});
+<script>$(document).ready(function(){
 
-$('.icon-close').click( function(){
-  $('body').removeClass('search-active');
+	(function($) {
+
+		$('#header__icon').click(function(e){
+			e.preventDefault();
+			$('body').toggleClass('with--sidebar');
+		});
+    
+    $('#site-cache').click(function(e){
+      $('body').removeClass('with--sidebar');
+    });
+
+	})(jQuery);
+
 });</script>
 
 </body>
