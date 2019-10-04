@@ -7,255 +7,143 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 
 <style>
-/* for more pen visit codepen.io/immad-hamid and for any question contact me via email at immad.hamid@gmail.com */
-
-@import url('https://fonts.googleapis.com/css?family=Lato');
-ul {
-    margin: 0;
-}
-p {
-    color: #ffffff;
-}
-#header {
-    height: 80px;
-    background-color: #181810;
-}
-#header .row {
-    display: flex;
-    align-items: center;
-    height: 80px;
-}
-#header .logo img {
-    max-width: 64px;
-    width: 100%;
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
-}
-#header #menu li {
-    display: inline-block;
-    margin-left: 28px;
-    margin-right: 28px;
-}
-#header #menu li:last-child {
-    margin-right: 0;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-/* nav item: navigation effect */
-.nav-effect li a {
-    -webkit-transition: color 0.3s;
-    -moz-transition: color 0.3s;
-    transition: color 0.3s;
-    position: relative;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: #fff;
-    text-transform: uppercase;
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #2d2d2d;
+  letter-spacing: 0.2px;
+  /* Search Active */
 }
-.nav-effect li a:before {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 50%;
-    color: transparent;
-    content: '\f1db';
-    font-family: 'FontAwesome';
-    text-shadow: 0 0 transparent;
-    font-size: 6px;
-    -webkit-transition: text-shadow 0.3s, color 0.3s;
-    -moz-transition: text-shadow 0.3s, color 0.3s;
-    transition: text-shadow 0.3s, color 0.3s;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    transform: translateX(-50%);
-    pointer-events: none;
+body.search-active {
+  overflow: hidden;
 }
-.nav-effect li a:hover,
-.nav-effect li a:focus {
-    text-decoration: none;
-    color: #ff832d;
+body.search-active .search-input {
+  opacity: 1;
+  transform: none;
+  pointer-events: all;
 }
-.nav-effect li a:hover:before,
-.nav-effect li a:focus:before {
-    color: #fff;
-    text-shadow: 10px 0 #fff, -10px 0 #fff;
+body.search-active .icon-close {
+  opacity: 1;
+  transform: rotate(-90deg);
+}
+body.search-active .control {
+  cursor: default;
+}
+body.search-active .control .btn-material {
+  transform: scale(70);
+}
+body.search-active .control .icon-material-search {
+  opacity: 0;
 }
 
-/* SlickNav Styling */
-.slicknav_menu {
-    display: none;
-    padding: 5px 10px;
-    background-color: #181810;
+/* Close Icon */
+.icon-close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 70px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 }
-.slicknav_btn {
-    margin: 0;
-    padding-top: 15px;
-    padding-left: 2px;
-    background-color: transparent;
-}
-.slicknav_btn .slicknav_icon-bar+.slicknav_icon-bar {
-    margin-top: 0;
-}
-.slicknav_nav a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: capitalize;
-    font-family: 'Lato', sans-serif;
-    text-align: right;
-    font-size: 14px;
-    line-height: 26px;
-    position: relative;
-    overflow: hidden;
-}
-.slicknav_nav a:hover {
-    background: none;
-    border-radius: 0;
-    color: #fff;
-}
-.slicknav_nav a:hover,
-.slicknav_nav a:active,
-.slicknav_nav a:focus,
-.slicknav_nav a:visited {
-    outline: none;
-}
-.slicknav_brand {
-    max-width: 64px;
-    width: 100%;
-    padding: 0;
-    position: relative;
-}
-.slicknav_brand img {
-    max-width: 32px;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
+.icon-close:hover {
+  transform: rotate(0);
 }
 
-/* Hamburger Icon Cross */
-.slicknav_icon {
-    position: relative;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    cursor: pointer;
+/* Search Input */
+.search-input {
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  margin-top: -40px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(40px, 0);
+  transition: all 0.3s ease-in-out;
 }
-.slicknav_icon span {
-    display: block !important;
-    position: absolute !important;
-    height: 2px !important;
-    width: 100% !important;
-    background: #d3531a !important;
-    border-radius: 9px !important;
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
+.search-input input {
+  color: #fff;
+  font-size: 54px;
+  border: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  outline: 0;
+  font-weight: 200;
 }
-/* hamburger bars when clicked */
-
-.slicknav_icon span:nth-child(1) {
-    top: 1px;
+.search-input ::-webkit-input-placeholder {
+  color: #EEE;
 }
-.slicknav_icon span:nth-child(2) {
-    top: 7px;
+.search-input :-moz-placeholder {
+  color: #EEE;
+  opacity: 1;
 }
-.slicknav_icon span:nth-child(3) {
-    top: 13px;
+.search-input ::-moz-placeholder {
+  color: #EEE;
+  opacity: 1;
+}
+.search-input :-ms-input-placeholder {
+  color: #EEE;
 }
 
-/* hamburger bars when closed */
-.slicknav_open .slicknav_icon span:nth-child(1) {
-    top: 6px;
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
+/* Container */
+.container {
+  padding-right: 50px;
+  padding-left: 50px;
+  position: relative;
 }
-.slicknav_open .slicknav_icon span:nth-child(2) {
-    opacity: 0;
-    left: -60px;
-}
-.slicknav_open .slicknav_icon span:nth-child(3) {
-    top: 6px;
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);
+.container.container-dark {
+  background: #22313F;
+  color: #FFF;
 }
 
-/* Material Styling */
-.ink {
-    display: block;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 100%;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
+/* Control btn */
+.control {
+  cursor: pointer;
 }
-.animate {
-    -webkit-animation: ripple 0.65s linear;
-    -moz-animation: ripple 0.65s linear;
-    -ms-animation: ripple 0.65s linear;
-    -o-animation: ripple 0.65s linear;
-    animation: ripple 0.65s linear;
+.control .btn-material {
+  position: absolute;
+  top: -30px;
+  width: 60px;
+  height: 60px;
+  right: 60px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background: #e91e63;
+  outline: 0;
+  transform-origin: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
-@-webkit-keyframes ripple {
-    100% {
-        opacity: 0;
-        -webkit-transform: scale(2.5);
-    }
+.control .btn-material:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-@-moz-keyframes ripple {
-    100% {
-        opacity: 0;
-        -moz-transform: scale(2.5);
-    }
+.control .icon-material-search {
+  color: #FFF;
+  position: absolute;
+  top: -10px;
+  right: 78px;
+  transition: opacity 0.3s ease-in-out;
 }
-@-o-keyframes ripple {
-    100% {
-        opacity: 0;
-        -o-transform: scale(2.5);
-    }
-}
-@keyframes ripple {
-    100% {
-        opacity: 0;
-        transform: scale(2.5);
-    }
-}
-/* media query for showing slick navigation at 767px */
 
-@media (max-width: 767px) {
-    #header {
-        display: none;
-    }
-    .slicknav_menu {
-        display: block;
-    }
+/* Utilities */
+.p-y-md {
+  padding-top: 2.8rem;
+  padding-bottom: 2.8rem;
+}
+
+/* Typo */
+h1,
+h2 {
+  font-weight: 300;
 }
 
 
@@ -327,65 +215,30 @@ margin: 0;
 <title>Anime Subtitle Indonesia | oalah</title>
 </head>
 <body>
-<!-- for more pen visit codepen.io/immad-hamid and for any question contact me via email at immad.hamid@gmail.com -->
-
-<!-- header -->
-<header id="header">
-  <div class="container-fluid">
-    <div class="row">
-
-      <!-- logo -->
-      <div class="col-sm-3">
-        <a href="#" class="logo">
-          <img src="http://demo3.inheritedarts.com/sound-cloud.png" class="logo">
-        </a>
-      </div>
-      <!-- logo ends -->
-
-      <!-- menu -->
-      <div class="col-sm-9">
-        <ul id="menu" class="text-right nav-effect">
-          <li>
-            <a href="#">about us</a>
-          </li>
-          <li>
-            <a href="#">programs</a>
-          </li>
-          <li>
-            <a href="#">people</a>
-          </li>
-          <li>
-            <a href="#">contact us</a>
-          </li>
-        </ul>
-      </div>
-      <!-- menu ends -->
-    </div>
+<!-- page heading -->
+<div class='container container-dark p-y-md'>
+  <div class='header-content'>
+    <h1>Material Search Animation</h1>
+    <h2>Usign CSS Transitions</h2>
   </div>
-</header>
-<!-- header ends -->
-
-
-<!---------------------------------------------------------------------------------------- Only add the header, CSS and JS Dont Add This ----------------------------------------------------------------------------------------->
-<div class="container-fluid">
-  <h1 style="font-family: 'Lato', sans-serif; color: #181818; font-size: 31px; line-height: 24px; letter-spacing: 0.04em; padding-top: 50px;">Features:</h1>
-  <ul>
-    <li style="font-family: 'Lato', sans-serif; color: #181818; font-size: 14px; line-height: 24px; letter-spacing: 0.04em;">Have Used Bootstrap Grid</li>
-    <li style="font-family: 'Lato', sans-serif; color: #181818; font-size: 14px; line-height: 24px; letter-spacing: 0.04em;">Used SlickNav for Mobile View</li>
-    <li style="font-family: 'Lato', sans-serif; color: #181818; font-size: 14px; line-height: 24px; letter-spacing: 0.04em;">Added Hover Effects</li>
-    <li style="font-family: 'Lato', sans-serif; color: #181818; font-size: 14px; line-height: 24px; letter-spacing: 0.04em;">Material Effect On Click On Mobile View</li>
-  </ul>
-  <p style="font-family: 'Lato', sans-serif; color: #181818; font-size: 14px; line-height: 24px; letter-spacing: 0.04em; padding-top: 15px;">Don't add this container. This navigation can save you alot of time, if you want to add something more, then you can fork this PEN. The logo that I have used is not my property.</p>
 </div>
-<style>
-  /*body {
-    background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),            url(https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-  }*/
-  body {
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQnewECE7v4-Y1_OKZDAIKEClyFIvaF1CoE3BehpGP4vUaoXkX)
-  }
-</style>
 
+
+<!-- page content + floating button -->
+<div class='container p-y-md'>
+  <div class='control'>
+    <div class='btn-material'></div>
+    <i class='material-icons icon-material-search'>search</i>
+  </div>
+
+  <div id='h2'>by <a href="https://codepen.io/hone">Luca Dimola</a></div>
+</div>
+
+<!-- full screen form controls -->
+<i class='icon-close material-icons'>close</i>
+<div class='search-input'>
+  <input class='input-search' placeholder='Start Typing' type='text'>
+</div>
 <ul class="card-list">
 
 <li class="card">
@@ -486,37 +339,13 @@ card_image.className = card_image.className + ' is-loaded';
 }
 </script>
 
-<script>// for more pen visit codepen.io/immad-hamid and for any question contact me via email at immad.hamid@gmail.com
-
-// Slick Menu
-$(function(){
-  $('#menu').slicknav({
-    label: '',
-    brand: '<img class="logo" src="http://demo3.inheritedarts.com/sound-cloud.png">'
-  });
+<script>$('.control').click( function(){
+  $('body').addClass('search-active');
+  $('.input-search').focus();
 });
 
-// Material Effect
-$(function(){
-	var ink, d, x, y;
-	$(".slicknav_nav a", this).click(function(e){
-    if($(this).find(".ink").length === 0){
-        $(this).prepend("<span class='ink'></span>");
-    }
-         
-    ink = $(this).find(".ink");
-    ink.removeClass("animate");
-     
-    if(!ink.height() && !ink.width()){
-        d = Math.max($(this).outerWidth(), $(this).outerHeight());
-        ink.css({height: d, width: d});
-    }
-     
-    x = e.pageX - $(this).offset().left - ink.width()/2;
-    y = e.pageY - $(this).offset().top - ink.height()/2;
-     
-    ink.css({top: y+'px', left: x+'px'}).addClass("animate");
-});
+$('.icon-close').click( function(){
+  $('body').removeClass('search-active');
 });</script>
 
 </body>
