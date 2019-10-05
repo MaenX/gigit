@@ -7,495 +7,63 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://4.bp.blogspot.com/-gzglVSg12mk/XYxxTERnMnI/AAAAAAAAAvc/U8QCbIOLRk091S6dgTSz5nBzdL6qnFruwCLcBGAsYHQ/s1600/onanion.png">
 	
 <style>
-/* -----------------------------------------------------
-  Material Design Mediahawkz.com Fixed & Responsive Header with Sidebar
-  CodePen URL: https://codepen.io/rkchauhan/pen/VamPVa
-  By: Ravikumar Chauhan
-  
-  Find me on:-
-  * Twitter: https://twitter.com/rkchauhan01
-  * Facebook: https://www.facebook.com/ravi032chauhan
-  * GitHub: https://github.com/rkchauhan
-  * CodePen: https://codepen.io/rkchauhan
-  * UpLabs: http://uplabs.com/rkchauhan01
 
-  Thanks to:-
-  * Google Material design - https://www.google.com/design/spec/material-design/introduction.html
-  * Google Material Color - https://www.google.com/design/spec/style/color.html
-  * Google Material Icons - https://design.google.com/icons/
-  * Roboto Font - https://google.com/fonts/specimen/Roboto
-  * Font Awesome - http://fontawesome.io
-  * jQuery - https://jquery.com
--------------------------------------------------------- */
-// Body Colors
-$body-txt-color: #646360;
-$body-bg-color: #eee;
-$selection-color: #b3d4fc;
-$link-txt-color: #03a9f4;
-
-// Header
-$header-bg-color: #3f51b5;
-
-// Social media color
-$twitter-color: #00baf0;
-$facebook-color: #3b5997;
-$google-plus-color: #c43c2c;
-$rss-color: #ff6600;
-
-// Dropdown menu
-$dd-menu-bg-color: $header-bg-color;
-
-/* -----------------------------------------------------
-  Body
--------------------------------------------------------- */
-body {
-  margin: 0;
-  padding: 0;
-  color: $body-txt-color;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  background-color: $body-bg-color;
-}
-
-*, *::after, *::before {
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-::selection {
-  background: $selection-color;
-  text-shadow: none;
-}
-
-a {
-  color: $link-txt-color;
-  outline: none;
-  text-decoration: none;
-
-  &:hover { text-decoration: underline; }
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.285);
-  z-index: 1001;
-}
-
-/* For Typography */
-.ul-base {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* -----------------------------------------------------
-Clearfix
--------------------------------------------------------- */
-.clearfix {
-  *zoom: 1;
-
-  &::after {
-    content: '';
-    display: table;
-    line-height: 0;
-    clear: both;
-  }
-}
-
-/* -----------------------------------------------------
-   Header
--------------------------------------------------------- */
-header {
-  display: block;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  background-color: #fff;
-  z-index: 1000;
-
-  .header-inner {
-    width: 100%;
-    height: 64px;
-    color: #fff;
-    padding: 0 20px;
-    background-color: $header-bg-color;
-    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-btn {
-    cursor: pointer;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 38px;
-    margin: 12px 0;
-    user-select: none;
-
-    &.nav-slider { float: left; }
-    &.search { display: none; }
-
-    i { vertical-align: middle; }
-  }
-
-  .header-logo {
-    display: inline-block;
-    overflow: hidden;
-    float: left;
-    padding: 21px 38px 21px 5px;
-
-    img {
-      display: block;
-      max-height: 21px;
-      vertical-align: middle;
-    }
-  }
-
-  .header-categories {
-    display: block;
-    position: relative;
-    float: left;
-    border-left: 1px solid rgba(255,255,255,0.157);
-  }
-
-  .header-search {
-    float: left;
-    display: block;
-    position: relative;
-    width: calc(100% - 620px);
-    height: 64px;
-    margin: 0 auto;
-    padding: 10px 0;
-    border-left: 1px solid rgba(255, 255, 255, 0.157);
-    border-right: 1px solid rgba(255, 255, 255, 0.157);
-
-    .search {
-      display: block;
-      position: relative;
-      width: calc(100% - 35px);
-      margin: 0 auto;
-
-      i {
-        position: absolute;
-        top: 8px;
-        left: 10px;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 28px;
-        cursor: pointer;
-      }
-
-      input[type="search"] {
-        width: 100%;
-        height: 44px;
-        padding: 0 15px 0 50px;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 16px;
-        outline: none;
-        border: none;
-        border-radius: 2px;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-
-      ::-webkit-input-placeholder { color: rgba(255,255,255,0.5); }
-      ::-moz-placeholder { color: rgba(255,255,255,0.8); }
-      :-moz-placeholder { color: rgba(255,255,255,0.8); }
-      :-ms-input-placeholder { color: rgba(255,255,255,0.8); }
-    }
-  }
-
-  .header-menu {
-    float: right;
-
-    ul {
-      height: 64px;
-
-      li {
-        display: block;
-        position: relative;
-        float: left;
-        margin: 0;
-        padding: 0 0 0 12px;
-        line-height: 64px;
-
-        a {
-          color: #fff;
-          font-size: 17px;
-          padding: 4px;
-
-          &:hover {
-            opacity: 0.6;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 1024px) {
-    .header-categories { display: none; }
-
-    .header-search { width: calc(100% - 440px); }
-  }
-
-  @media only screen and (max-width: 860px) {
-    .header-search { display: none; }
-
-    .header-menu {
-      ul li:last-child { display: none; }
-    }
-  }
-
-  @media only screen and (max-width: 480px) {
-    .header-inner {
-      padding: 0 12px;
-      text-align: center;
-    }
-
-    .nav-btn { background-color: rgba(0,0,0,0.175); }
-
-    .header-logo {
-      float: right;
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-
-    .header-menu { display: none; }
-  }
-}
-
-/* -----------------------------------------------------
-   Nav
--------------------------------------------------------- */
-nav {
-  overflow-y: auto;
-  position: fixed;
-  top: 0px;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  color: #fff;
-  background-color: #f9f9f9;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-  z-index: 1002;
-
-  .nav-header {
-    display: block;
-    background-color: $header-bg-color;
-
-    .logo-wrap {
-      padding: 1.7em 1em;
-
-      .logo-icon {
-        display: inline-block;
-        text-decoration: none;
-
-        img {
-          display: block;
-          border-radius: 50%;
-        }
-      }
-
-      .logo-text {
-        display: inline-block;
-        color: #fff;
-        font-size: 1.2em;
-        vertical-align: 12px;
-        margin-left: 8px;
-        text-decoration: none;
-      }
-    }
-
-    .nav-search {
-      position: relative;
-      height: 40px;
-
-      .search {
-        display: block;
-        position: relative;
-
-        i {
-          position: absolute;
-          top: 8px;
-          right: .7em;
-          color: rgba(255, 255, 255, 0.6);
-          font-size: 24px;
-          cursor: pointer;
-        }
-
-        input[type="search"] {
-          width: 100%;
-          height: 40px;
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 15px;
-          padding: 0 48px 0 20px;
-          outline: none;
-          border: none;
-          background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        ::-webkit-input-placeholder { color: rgba(255,255,255,0.5); }
-        ::-moz-placeholder { color: rgba(255,255,255,0.8); }
-        :-moz-placeholder { color: rgba(255,255,255,0.8); }
-        :-ms-input-placeholder { color: rgba(255,255,255,0.8); }
-      }
-    }
-  }
-
-  .nav-categories {
-    li {
-      display: block;
-      position: relative;
-
-      a {
-        display: block;
-        width: 100%;
-        font-size: 1rem;
-        color: #5c5c5c;
-        padding: .625em 1.3em;
-        text-decoration: none;
-
-        &:hover { background-color: rgba(0,0,0,0.1); }
-      }
-    }
-  }
-
-  &.open {
-    left: 0px;
-    box-shadow: 4px 4px 20px rgba(0,0,0,0.275);
-    opacity: 1;
-  }
-
-  .nav-separator {
-    width: 100%;
-    height: 1px;
-    margin: 7px 0;
-    background-color: rgba(0,0,0,0.175);
-  }
-
-  .nav-link-title {
-    display: block;
-    color: $header-bg-color;
-    font-size: 1rem;
-    padding: .5em 1.3em;
-  }
-
-  .social {
-    display: flex;
-    margin: 4px 0;
-    border-top: 1px solid rgba(0,0,0,0.155);
-    border-bottom: 1px solid rgba(0,0,0,0.155);
-
-    li {
-      display: inline-block;
-      position: relative;
-      width: (100% / 4);
-      height: 28px;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      line-height: 28px;
-      flex-direction: row;
-      border-right: 1px solid rgba(0,0,0,0.175);
-
-      &:last-child { border-right: 0; }
-
-      a {
-        display: block;
-        color: #5c5c5c;
-        font-size: 15px;
-        padding: 2px;
-        text-decoration: none;
-
-        &.twitter {
-          &:hover { color: #00baf0; }
-        }
-        &.facebook {
-          &:hover { color: #3b5997; }
-        }
-        &.google-plus {
-          &:hover { color: #c43c2c; }
-        }
-        &.rss {
-          &:hover { color: #ff6600; }
-        }
-      }
-    }
-  }
-
-  .copyright {
-    display: block;
-    color: #5c5c5c;
-    text-align: center;
-    padding: .5em 0 1em;
-
-    span {
-      display: block;
-      width: 100%;
-      font-size: 11px;
-      margin-bottom: 4px;
-    }
-  }
-}
-
-/* -----------------------------------------------------
-   Dropdown Menu
--------------------------------------------------------- */
-li.dropdown {
-  display: inline-block;
-  position: relative;
-
-  a {
-    display: block;
-    height: 64px;
-    padding: 0 35px;
-    color: #fff;
-    font-size: 17px;
-    line-height: 64px;
-    text-decoration: none;
-
-    i { vertical-align: middle; }
-  }
-
-  .dropdown-menu {
-    display: none;
-    overflow: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    min-width: 240px;
-    margin: 2px 0;
-    padding: 5px 0;
-    text-align: left;
-    border-radius: 2px;
-    background-color: $dd-menu-bg-color;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-
-    li {
-      display: block;
-
-      a {
-        display: block;
-        height: 40px;
-        font-size: 1em;
-        line-height: 40px;
-        text-decoration: none;
-      }
-    }
-  }
-
-  &.open .dropdown-menu { display: block; }
-}
+/* Material Design Effect */
+.waves-effect{position:relative;cursor:pointer;display:inline-block;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;vertical-align:middle;z-index:1;will-change:opacity, transform;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;-ms-transition:all .3s ease-out;transition:all .3s ease-out}
+.waves-effect .waves-ripple{position:absolute;border-radius:50%;width:20px;height:20px;margin-top:-10px;margin-left:-10px;opacity:0;background:rgba(0,0,0,0.2);-webkit-transition:all 0.7s ease-out;-moz-transition:all 0.7s ease-out;-o-transition:all 0.7s ease-out;-ms-transition:all 0.7s ease-out;transition:all 0.7s ease-out;-webkit-transition-property:-webkit-transform, opacity;-moz-transition-property:-moz-transform, opacity;-o-transition-property:-o-transform, opacity;transition-property:transform, opacity;-webkit-transform:scale(0);-moz-transform:scale(0);-ms-transform:scale(0);-o-transform:scale(0);transform:scale(0);pointer-events:none}
+.waves-effect.waves-light .waves-ripple{background-color:rgba(255,255,255,0.45)}
+.waves-notransition{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none !important;transition:none !important}
+.waves-circle{-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-mask-image:-webkit-radial-gradient(circle, white 100%, black 100%)}
+.waves-input-wrapper{border-radius:0.2em;vertical-align:bottom;width:100%}
+.waves-input-wrapper .waves-button-input{position:relative;top:0;left:0;z-index:1}
+.waves-circle{text-align:center;width:2.5em;height:2.5em;line-height:2.5em;border-radius:50%;-webkit-mask-image:none}
+.waves-block{display:block}
+a.waves-effect .waves-ripple{z-index:-1}
+.ripple{display:inline-block;text-decoration:none;overflow:hidden;position:relative;z-index:0}
+.ink{display:block;position:absolute;background:rgba(255,255,255,0.4);border-radius:100%;-webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transform:scale(0)}.animate{-webkit-animation:ripple .55s linear;-moz-animation:ripple .55s linear;-ms-animation:ripple .55s linear;-o-animation:ripple .55s linear;animation:ripple .55s linear}
+@-webkit-keyframes ripple{100%{opacity:0;-webkit-transform:scale(2.5)}}
+@-moz-keyframes ripple{100%{opacity:0;-moz-transform:scale(2.5)}}
+@-o-keyframes ripple{100%{opacity:0;-o-transform:scale(2.5)}}
+@keyframes ripple{100%{opacity:0;transform:scale(2.5)}}
 	
-	
-	
+/* Material Design Navigation */
+.toggleMenu{color:#fff;padding:10px;font-size:25px;float:left;margin-right:20px}h1{color:#fff;font-size:20px;font-weight:400;margin:12px 0 0}
+.dropdowns{font:normal normal 14px Roboto,Arial,sans-serif;background:#fff;overflow:auto;position:fixed;z-index:99;bottom:0;width:300px;left:-400px;transition:all .7s ease-in-out;top:0;border-top:1px solid #ddd;line-height:48px;box-shadow:0 5px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+.nav-menu2{list-style:none;margin:0;*zoom:1;float:left;padding:0}
+.nav-menu2:before,.nav-menu2:after{content:" ";display:table}
+.nav-menu2:after{clear:both}.sub-menu{transition:all .5s ease-in-out}
+.nav-menu2 ul{list-style:none;margin:0;width:auto;white-space:nowrap}
+.nav-menu2 a{display:block;padding:0 15px}
+.nav-menu2 li{position:relative;margin:0}
+.nav-menu2 > li{float:left;width:100%}
+.nav-menu2 > li > a{display:block;height:48px;line-height:48px;color:#666}
+.nav-menu2 > li:hover > a{background:#E6E6E6}
+.nav-menu2 li ul{background:#fff;display:none;-webkit-transition:all .25s ease-out;-moz-transition:all .25s ease-out;-ms-transition:all .25s ease-out;-o-transition:all .25s ease-out;transition:all .25s ease-out;padding:0}
+.nav-menu2 li li ul{left:100%;top:-1px}
+.nav-menu2 li li a.click ul{visibility:visible;opacity:10}
+.nav-menu2 li li a{display:block;color:#666;position:relative;padding-left:53px;line-height:40px}
+.nav-menu2 li li a:hover{background:#f0f0f0}
+.nav-menu2 li li li a{background:#fff;z-index:20;color:#333}
+.nav-menu2 li .dropdown:after{content:"\f105";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit;position:absolute;top:0;right:20px;color:#444}
+.nav-menu2 li .dropdown.open:after{content:"\f107";font-family:FontAwesome;font-style:normal;font-weight:400;text-decoration:inherit}
+.nav-menu2 li .dropdown:hover:after{color:#000}
+.nav-menu2 li i{font-size:18px;width:35px}.nav li a.click{opacity:1}
+.nav-menu2 h2{font-size:14px;font-weight:normal!important;padding:0 20px;margin:0;overflow:hidden;border-top:1px solid #ddd;color:#999}
+.dropdowns h3,.dropdowns p{padding:0;margin:0;font-weight:400!important}
+.dropdowns .profilemenu{padding:10px;background:#f8f8f8;border-bottom:1px solid #ddd;line-height:2}
+.dropdowns h3{font-size:14px}.nav-menu2 p{font-size:13px}
+.dropdowns img{width:70px;height:70px;border-radius:100%}
+#info2{float:right;border-radius:100%;padding:0 10px;color:#999}
+#info2:hover{background:#ddd}
+#nav-menu1{visibility:hidden;position:absolute;background:#fff;list-style:none;right:30px;top:135px;padding:0;width:0;height:0;transition:all .5s cubic-bezier(0.07, 0.68, 0.35, 1.04);z-index:9;overflow:hidden;box-shadow:0 5px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
+#nav-menu1 li{width:100%}
+#nav-menu1 li a{padding:8px 15px;width:100%;font-weight:300;color:#666}
+#nav-menu1 li a:hover{background:#e1e1e1}
+#nav-menu1.shows{visibility:visible;width:200px;height:130px}
+.dropdowns.shows{left:0;opacity:1}
+.darkshadow{visibility:hidden;opacity:0;position:fixed;top:0;background:rgba(0, 0, 0, 0.59);left:0;right:0;bottom:0;margin:0;z-index:97;transition:all .4s ease-in-out}
+.darkshadow.shows{visibility:visible;opacity:1}
+
 body {
 --background: #f5f6fa;
 --foreground: #fff;
@@ -623,98 +191,43 @@ font-size: 14px;
 <title>Download & Streaming Anime Subtitle Indonesia</title>
 </head>
 <body>
-	
-<!-- nav -->
-<nav class="sidebar">
-  <div class="nav-header">
-    <div class="logo-wrap">
-      <a class="logo-icon" href="http://www.mediahawkz.com/"><img alt="logo-icon" src="http://mediahawkz.com/assets/images/favicons/apple-icon-72x72.png" width="40"></a>
-      <a class="logo-text" href="http://www.mediahawkz.com/">MediahawkZ</a>
-    </div>
 
-    <div class="nav-search">
-      <div class="search">
-        <i class="material-icons">search</i>
-        <input type="search" name="search" placeholder="Search">
-      </div>
-    </div>
-  </div>
-  <ul class="nav-categories ul-base">
-    <li><a href="http://www.mediahawkz.com/topic/technology">Technology</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/science">Science</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/speak-up">Speak up</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/general">General</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/lifestyle">Lifestyle</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/world">World</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/business">Business</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/entertainment">Entertainment</a></li>
-    <li><a href="http://www.mediahawkz.com/topic/sports">Sports</a></li>
-  </ul>
-  <ul class="social ul-base">
-    <li><a href="https://twitter.com/MediahawkZ" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-    <li><a href="https://www.facebook.com/mediahawkz" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-    <li><a href="https://plus.google.com/+MediahawkzIndia" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-    <li><a href="http://www.mediahawkz.com/rss" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
-  </ul>
-  <div class="copyright">
-    <span>&copy; 2016 <a href="http://www.mediahawkz.com" class="link">MediahawkZ.com</a> Made in India</span>
-    <span>Designed by <a href="https://twitter.com/rkchauhan01" target="_blank">Ravikumar Chauhan</a></span>
-  </div>
-</nav><!-- @end nav -->
+<a class='toggleMenu ripple' href='javascript:;'><i class='fa fa-bars'></i></a>
 
-<!-- header -->
-<header>
-  <div class="header-inner clearfix">
-    <div class="nav-btn nav-slider">
-      <i class="material-icons">menu</i>
-    </div>
-    <div class="header-logo">
-      <a href="http://www.mediahawkz.com/"><img alt="logo" src="http://mediahawkz.com/assets/images/logos/logo-v2-1.png"></a>
-    </div>
-    <div class="header-categories">
-      <ul class="ul-base">
-        <li class="dropdown">
-          <a class="dropdown-toggle" href="#"><span>Categories</span> <i class="material-icons">keyboard_arrow_down</i></a>
-          <ul class="dropdown-menu ul-base">
-            <li><a href="http://www.mediahawkz.com/topic/technology">Technology</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/science">Science</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/speak-up">Speak up</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/general">General</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/lifestyle">Lifestyle</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/world">World</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/business">Business</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/entertainment">Entertainment</a></li>
-            <li><a href="http://www.mediahawkz.com/topic/sports">Sports</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="header-search">
-      <div class="search">
-        <i class="material-icons">search</i>
-        <input type="search" name="search" placeholder="Search">
-      </div>
-    </div>
-    <div class="header-menu">
-      <ul class="ul-base">
-        <li><a href="https://twitter.com/MediahawkZ" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://www.facebook.com/mediahawkz" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://plus.google.com/+MediahawkzIndia" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="http://www.mediahawkz.com/rss" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
-        <li><a href="http://www.mediahawkz.com/admin">Login</a></li>
-      </ul>
-    </div>
-  </div>
-</header><!-- @end header -->
+<div class='darkshadow'></div>
+<nav class='dropdowns' itemprop='mainEntity' itemscope='itemscope' itemtype='http://schema.org/SiteNavigationElement'>
+<div class='wrapper'>
+<div class='profilemenu'>
+<img alt='Admin' src='https://2.bp.blogspot.com/-GsQfvTESyZA/Vz_pQX3IkmI/AAAAAAAAD7A/z4uqNAtlPmMZhho4wbUcyMOFfYckJUQ7ACLcB/s1600/noimage.png' title='Admin'/>
+<h3>Nama Admin</h3>
+<a class='ripple' href='javascript:;' id='info2'><i class='fa fa-caret-down'></i></a>
+<p>emailkamu@gmail.com</p>
+<ul id='nav-menu1'>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Google+</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Facebook</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Twitter</span></a></li>
+</ul>
+</div>
+<ul class='nav nav-menu2'>
+<li><a class='waves-effect' href='/' itemprop='url' expr:title='data:blog.title'><span itemprop='name'><i class='fa fa-home'></i> Home</span></a></li>
+<li class='sub-menu'>
+<a class='dropdown waves-effect' href='javascript:;' title='Ranking'><i class='fa fa-trophy'></i> Ranking</a>
+<ul class='sub'>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Players</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Groups</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url'><span itemprop='name'>Company</span></a></li>
+</ul>
+</li>
+<li><a class='waves-effect' href='#' itemprop='url' title='News'><span itemprop='name'><i class='fa fa-newspaper-o'></i> News</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url' title='Inbox'><span itemprop='name'><i class='fa fa-inbox'></i> Inbox</span></a></li>
+<h2>Submenu</h2>
+<li><a class='waves-effect' href='#' itemprop='url' title='Settings'><span itemprop='name'><i class='fa fa-gear'></i> Settings</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url' title='My File'><span itemprop='name'><i class='fa fa-file'></i> My File</span></a></li>
+<li><a class='waves-effect' href='#' itemprop='url' title='Upload'><span itemprop='name'><i class='fa fa-cloud-upload'></i> Upload</span></a></li>
+</ul>
+</div>
+</nav>	
 
-<!-- Main content -->
-<main role="main"></main><!-- @end main -->
-
-<!-- Footer -->
-<footer></footer><!-- @end footer -->
-
-<div class="overlay"></div>
-	
 <div class="fab"></div>
 
 <section>
@@ -1088,36 +601,54 @@ font-size: 14px;
 </div>
 </div>
 </section>
-	
-	<script>$('.dropdown-toggle').on('click', function(e) {
-  e.stopPropagation();
-  e.preventDefault();
 
-  var self = $(this);
-  if(self.is('.disabled, :disabled')) {
-    return false;
-  }
-  self.parent().toggleClass("open");
+<script type='text/javascript'>
+//<![CDATA[
+// New Waves
+!function(t){"use strict";function e(t){return null!==t&&t===t.window}function n(t){return e(t)?t:9===t.nodeType&&t.defaultView}function a(t){var e,a,i={top:0,left:0},o=t&&t.ownerDocument;return e=o.documentElement,void 0!==t.getBoundingClientRect&&(i=t.getBoundingClientRect()),a=n(o),{top:i.top+a.pageYOffset-e.clientTop,left:i.left+a.pageXOffset-e.clientLeft}}function i(t){var e="";for(var n in t)t.hasOwnProperty(n)&&(e+=n+":"+t[n]+";");return e}function o(t){if(!1===d.allowEvent(t))return null;for(var e=null,n=t.target||t.srcElement;null!==n.parentElement;){if(!(n instanceof SVGElement||-1===n.className.indexOf("waves-effect"))){e=n;break}if(n.classList.contains("waves-effect")){e=n;break}n=n.parentElement}return e}function r(e){var n=o(e);null!==n&&(c.show(e,n),"ontouchstart"in t&&(n.addEventListener("touchend",c.hide,!1),n.addEventListener("touchcancel",c.hide,!1)),n.addEventListener("mouseup",c.hide,!1),n.addEventListener("mouseleave",c.hide,!1))}var s=s||{},u=document.querySelectorAll.bind(document),c={duration:750,show:function(t,e){if(2===t.button)return!1;var n=e||this,o=document.createElement("div");o.className="waves-ripple",n.appendChild(o);var r=a(n),s=t.pageY-r.top,u=t.pageX-r.left,d="scale("+n.clientWidth/100*10+")";"touches"in t&&(s=t.touches[0].pageY-r.top,u=t.touches[0].pageX-r.left),o.setAttribute("data-hold",Date.now()),o.setAttribute("data-scale",d),o.setAttribute("data-x",u),o.setAttribute("data-y",s);var l={top:s+"px",left:u+"px"};o.className=o.className+" waves-notransition",o.setAttribute("style",i(l)),o.className=o.className.replace("waves-notransition",""),l["-webkit-transform"]=d,l["-moz-transform"]=d,l["-ms-transform"]=d,l["-o-transform"]=d,l.transform=d,l.opacity="1",l["-webkit-transition-duration"]=c.duration+"ms",l["-moz-transition-duration"]=c.duration+"ms",l["-o-transition-duration"]=c.duration+"ms",l["transition-duration"]=c.duration+"ms",l["-webkit-transition-timing-function"]="cubic-bezier(0.250, 0.460, 0.450, 0.940)",l["-moz-transition-timing-function"]="cubic-bezier(0.250, 0.460, 0.450, 0.940)",l["-o-transition-timing-function"]="cubic-bezier(0.250, 0.460, 0.450, 0.940)",l["transition-timing-function"]="cubic-bezier(0.250, 0.460, 0.450, 0.940)",o.setAttribute("style",i(l))},hide:function(t){d.touchup(t);var e=this,n=(e.clientWidth,null),a=e.getElementsByClassName("waves-ripple");if(!(a.length>0))return!1;var o=(n=a[a.length-1]).getAttribute("data-x"),r=n.getAttribute("data-y"),s=n.getAttribute("data-scale"),u=350-(Date.now()-Number(n.getAttribute("data-hold")));u<0&&(u=0),setTimeout(function(){var t={top:r+"px",left:o+"px",opacity:"0","-webkit-transition-duration":c.duration+"ms","-moz-transition-duration":c.duration+"ms","-o-transition-duration":c.duration+"ms","transition-duration":c.duration+"ms","-webkit-transform":s,"-moz-transform":s,"-ms-transform":s,"-o-transform":s,transform:s};n.setAttribute("style",i(t)),setTimeout(function(){try{e.removeChild(n)}catch(t){return!1}},c.duration)},u)},wrapInput:function(t){for(var e=0;e<t.length;e++){var n=t[e];if("input"===n.tagName.toLowerCase()){var a=n.parentNode;if("i"===a.tagName.toLowerCase()&&-1!==a.className.indexOf("waves-effect"))continue;var i=document.createElement("i");i.className=n.className+" waves-input-wrapper";var o=n.getAttribute("style");o||(o=""),i.setAttribute("style",o),n.className="waves-button-input",n.removeAttribute("style"),a.replaceChild(i,n),i.appendChild(n)}}}},d={touches:0,allowEvent:function(t){var e=!0;return"touchstart"===t.type?d.touches+=1:"touchend"===t.type||"touchcancel"===t.type?setTimeout(function(){d.touches>0&&(d.touches-=1)},500):"mousedown"===t.type&&d.touches>0&&(e=!1),e},touchup:function(t){d.allowEvent(t)}};s.displayEffect=function(e){"duration"in(e=e||{})&&(c.duration=e.duration),c.wrapInput(u(".waves-effect")),"ontouchstart"in t&&document.body.addEventListener("touchstart",r,!1),document.body.addEventListener("mousedown",r,!1)},s.attach=function(e){"input"===e.tagName.toLowerCase()&&(c.wrapInput([e]),e=e.parentElement),"ontouchstart"in t&&e.addEventListener("touchstart",r,!1),e.addEventListener("mousedown",r,!1)},t.Waves=s,document.addEventListener("DOMContentLoaded",function(){s.displayEffect()},!1)}(window);
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+// Effect
+$(function() {
+    var ink, d, x, y;
+    $(".ripple").click(function(e) {
+        if ($(this).find(".ink").length === 0) {
+            $(this).prepend("<span class='ink'></span>");
+        }
+        ink = $(this).find(".ink");
+        ink.removeClass("animate");
+        if (!ink.height() && !ink.width()) {
+            d = Math.max($(this).outerWidth(), $(this).outerHeight());
+            ink.css({
+                height: d,
+                width: d
+            });
+        }
+        x = e.pageX - $(this).offset().left - ink.width() / 2;
+        y = e.pageY - $(this).offset().top - ink.height() / 2;
+        ink.css({
+            top: y + 'px',
+            left: x + 'px'
+        }).addClass("animate");
+    });
 });
+//]]>
+</script>	
 
-$(document).on('click', function(e) {
-  if($('.dropdown').hasClass('open')) {
-    $('.dropdown').removeClass('open');
-  }
-});
+<script type='text/javascript'>
+$(document).ready(function(){$("#info2").click(function(){$("#nav-menu1").toggleClass("shows");});});
+$(document).ready(function(){$(".toggleMenu").click(function(){$(".dropdowns").toggleClass("shows");});});
+$(document).ready(function(){$(".darkshadow").click(function(){$(".dropdowns").removeClass("shows");});});
+$(document).ready(function(){$(".darkshadow").click(function(){$(".darkshadow").removeClass("shows");});});
+$(document).ready(function(){$(".toggleMenu").click(function(){$(".darkshadow").toggleClass("shows");});});
+//<![CDATA[
+// Sub Nav
+var Script=function(){jQuery('.nav-menu2 .sub-menu > a').click(function(){var last=jQuery('.sub-menu.open',$('.nav-menu2'));last.removeClass("open");jQuery('.dropdown').addClass("open");jQuery('.dropdown',last).removeClass("open");jQuery('.sub',last).slideUp(300);var sub=jQuery(this).next();if(sub.is(":visible")){jQuery('.dropdown',jQuery(this)).removeClass("open");jQuery(this).parent().removeClass("open");sub.slideUp(300)}else{jQuery('.dropdown',jQuery(this)).addClass("open");jQuery(this).parent().addClass("open");sub.slideDown(300)}var o=($(this).offset());diff=300-o.top;if(diff>0)$(".nav-menu2").scrollTo("-="+Math.abs(diff),500);else $(".nav-menu2").scrollTo("+="+Math.abs(diff),500)})}();
+//]]>
+</script>
 
-$('.nav-btn.nav-slider').on('click', function() {
-  $('.overlay').show();
-  $('nav').toggleClass("open");
-});
-
-$('.overlay').on('click', function() {
-  if($('nav').hasClass('open')) {
-    $('nav').removeClass('open');
-  }
-  $(this).hide();
-});</script>
-		
 <script type='text/javascript'>
 document.querySelector('.fab').onclick = function () {
 document.querySelector('body').classList.toggle('dark');
