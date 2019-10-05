@@ -8,140 +8,125 @@
 	
 <style>
 
- /* CSS Simple Menu */
-.unstyled-list {
-    padding: 0;
+.navOpen {
+  overflow: hidden;
 }
-
-.unstyled-list li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.wrapper {
+  transition-duration: 0.5s;
+  transition-timing-function: swing;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 100px 40px;
 }
-
-.nav-menu {
-    position: absolute;
-    right: 0;
-    top: 0;
-    min-width: 140px;
-    opacity: 0;
-    backface-visibility: hidden;
-    transform: translate3d(0,20px,0);
-    visibility: hidden;
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,0.2);
-    transition: all .2s ease, visibility 0s linear;
+.wrapper.open {
+  transform: translateX(250px) translateY(50px);
+  -webkit-transform: translateX(250px) translateY(50px);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
-
-.nav {
-    position: fixed;
-    top: 5%;
-    right: 2%;
-    z-index: 102;
+.wrapper section {
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-.nav.active .fa-bars {
-    opacity: 0;
+.wrapper section h1 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
-
-.nav.active .fa-times {
-    opacity: 1;
-    color: #fff;
-    background: #f56954;
+.wrapper section h2 {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
-
-.nav.active .nav-menu {
-    opacity: 1;
-    transform: translate3d(0,50px,0);
-    visibility: visible;
-    transition-delay: 0s;
+.wrapper section p {
+  margin-bottom: 40px;
 }
-
-.menu-btn {
-    display: block;
-    width: 40px;
-    height: 40px;
-    color: #fff;
-    background-color: rgba(0,0,0,0.2);
-    transition: all .2s ease;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+.openNav {
+  transition-duration: 0.5s;
+  transition-timing-function: swing;
+  width: 50px;
+  height: 50px;
+  background-color: #14B9FF;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
 }
-
-.menu-btn .fa {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 24px;
-    line-height: 40px;
-    width: 40px;
-    vertical-align: middle;
-    transition: opacity .1s linear;
+.openNav:hover {
+  cursor: pointer;
 }
-
-.menu-btn .fa-bars {
-    opacity: 1;
-    color: #fff;
+.openNav .icon {
+  transition-duration: 0.2s;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  top: 24px;
+  left: 10px;
 }
-
-.menu-btn .fa-times {
-    opacity: 0;
+.openNav .icon:before,
+.openNav .icon:after {
+  transition-duration: 0.5s;
+  background-color: white;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 2px;
+  left: 0px;
 }
-
-.menu-btn:hover {
-    background-color: #f56954;
-    color: #fff;
+.openNav .icon:before {
+  top: -7px;
 }
-
-.nav-item-link {
-    display: block;
-    font-size: 13px;
-    color: #999;
-    padding: 15px;
-    background-color: #fff;
-    transition: all .2s ease;
-    border-bottom: 1px solid #e9e9e9;
+.openNav .icon:after {
+  top: 7px;
 }
-
-.nav-item:last-child .nav-item-link {
-    border-bottom: none;
+.openNav.open {
+  transform: translateX(250px) translateY(50px);
+  -webkit-transform: translateX(250px) translateY(50px);
 }
-
-.nav-item .nav-item-link i.fa.fa-home,.nav-item .nav-item-link i.fa.fa-paper-plane,.nav-item .nav-item-link i.fa.fa-list-alt,.nav-item .nav-item-link i.fa.fa-coffee {
-    margin-right: 10px;
+.openNav.open .icon {
+  background-color: transparent;
 }
-
-.nav-item-link:hover {
-    background-color: #fcfcfc;
+.openNav.open .icon:before,
+.openNav.open .icon:after {
+  top: 0;
 }
-
-a.nav-item-link:hover {
-    color: #1497ec;
+.openNav.open .icon:before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
-
-.unstyled-list:before {
-    bottom: 100%;
-    right: 10%;
-    border: solid transparent;
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255,255,255,0);
-    border-bottom-color: #f56954;
-    border-width: 8px;
-    margin-left: -8px;
+.openNav.open .icon:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
-
-.nav-item:first-child .nav-item-link {
-    border-top: 3px solid #f56954;
+nav {
+  background-color: #14B9FF;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
-
-a.nav-item-link {
-text-decoration: none;
-font-family: inherit;
-} 	
+nav ul {
+  width: 250px;
+  margin-top: 50px;
+}
+nav ul:hover li {
+  color: rgba(255, 255, 255, 0.5);
+}
+nav ul li {
+  transition-duration: 0.25s;
+  display: block;
+  padding: 5px 40px;
+  color: white;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+nav ul li:hover {
+  cursor: pointer;
+  color: white;
+}
 
 body {
 --background: #f5f6fa;
@@ -168,6 +153,7 @@ position: fixed;
 bottom: 20px;
 right: 20px;
 border-radius: 50%;
+cursor: pointer;
 z-index: 2;
 }
 
@@ -271,29 +257,20 @@ font-size: 14px;
 </head>
 <body>
 
- <nav class='nav' data-menu>
-  <a class='menu-btn' href='#'>
-    <i class='fa fa-bars'></i>
-    <i class='fa fa-times'></i>
-  </a>
-  <ul class='unstyled-list nav-menu'>
-    <li class='nav-item'>
-      <a class='nav-item-link' href='#'>About</a>
-    </li>
-    <li class='nav-item'>
-      <a class='nav-item-link' href='#'>Articles</a>
-    </li>
-    <li class='nav-item'>
-      <a class='nav-item-link' href='#'>Work</a>
-    </li>
-    <li class='nav-item'>
-      <a class='nav-item-link' href='#'>Contact</a>
-    </li>
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>About me</li>
+    <li>Blog</li>
+    <li>Contact</li>
   </ul>
-</nav> 
-
+</nav>
+<div class="openNav">
+  <div class="icon"></div>
+</div>
+	
 <div class="fab"></div>
-
+<div class="wrapper">
 <section>
 <h1>Series</h1>
 <div class="container">
@@ -665,39 +642,13 @@ font-size: 14px;
 </div>
 </div>
 </section>
-
-	 <script type="text/javascript">
-(function() {
-  window.Menu = (function() {
-    Menu.init = function() {
-      return $('[data-menu]').each(function(idx, el) {
-        return new Menu($(el));
-      });
-    };
-
-    function Menu($el) {
-      this.nav = $el;
-      this.menubtn = $('.menu-btn', this.nav);
-      this.menubtn.on('click', (function(_this) {
-        return function(ev) {
-          _this.nav.toggleClass('active');
-          return false;
-        };
-      })(this));
-    }
-
-    return Menu;
-
-  })();
-
-  $(function() {
-    if ($('[data-menu]').length) {
-      return Menu.init();
-    }
-  });
-
-}).call(this);
-</script> 
+	</div>
+	<script>$(".openNav").click(function() {
+  $("body").toggleClass("navOpen");
+  $("nav").toggleClass("open");
+  $(".wrapper").toggleClass("open");
+  $(this).toggleClass("open");
+		});</script>
 	
 <script type='text/javascript'>
 document.querySelector('.fab').onclick = function () {
