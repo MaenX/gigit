@@ -661,7 +661,27 @@ font-size: 14px;
 </div>
 </div>
 </section>
- 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+
+	(function($) {
+
+		$('#header__icon').click(function(e){
+			e.preventDefault();
+			$('body').toggleClass('with--sidebar');
+		});
+    
+    $('#site-cache').click(function(e){
+      $('body').removeClass('with--sidebar');
+    });
+
+	})(jQuery);
+
+	});</script>
+	
 <script type='text/javascript'>
 document.querySelector('.fab').onclick = function () {
 document.querySelector('body').classList.toggle('dark');
