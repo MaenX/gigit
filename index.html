@@ -7,6 +7,98 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://4.bp.blogspot.com/-gzglVSg12mk/XYxxTERnMnI/AAAAAAAAAvc/U8QCbIOLRk091S6dgTSz5nBzdL6qnFruwCLcBGAsYHQ/s1600/onanion.png">
 	
 <style>
+	
+	body {
+ 
+  font-family:Arial;
+}
+
+.drop {
+  float:right;
+
+}
+
+.dd {
+position:relative;
+background:#404BB3;
+  padding:20px;
+  width:100%;
+  box-sizing:border-box;
+  color:#FFF;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  height:68px;
+}
+
+h1 {
+  margin:0;
+  padding:0;
+  float:left;
+  font-size:26px;
+}
+small {
+ font-size:14px;
+  color:#666;
+  font-weight:normal;
+}
+svg {
+  height:24px;
+  width:24px;
+}
+svg circle {
+ fill:#FFF; 
+}
+
+.dd-menu {
+  position: absolute;
+top: 70%;
+right: 20px;
+z-index: 1000;
+font-size: 14px;
+text-align: left;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0,0,0,0.15);
+border-radius: 4px;
+box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+background-clip: padding-box;
+  -webkit-transition: all 0.2s ease;
+  opacity:0;
+  -webkit-transform-origin: right top 0px; 
+  -webkit-transform: scale(0); 
+}
+.dd-menu ul {
+  min-width: 160px;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+  position:relative;
+}
+
+.dd-menu.active {
+  opacity:1;
+  -webkit-transform-origin: right top 0px; 
+  -webkit-transform: scale(1); 
+}
+
+.dd-menu li {
+  color:#666;
+margin: 0;
+padding: 5px 0 5px 15px;
+height: 24px;
+list-style: none;
+  opacity: 0; 
+  transform: translateY(0px);
+}
+.dd-menu li {
+  -webkit-transition: all 0.3s ease;
+  transform: translateY(-30%);
+}
+.dd-menu.active li {
+  opacity: 1; 
+  transform: translateY(0px);
+}
+
+	
 body {
 --background: #f5f6fa;
 --foreground: #fff;
@@ -22,162 +114,6 @@ body.dark {
 --background: #1c2833;
 --foreground: #283845;
 color: white;
-}
-
-
-nav {
-  width: 100%;
-  max-height: 100px;
-  background-color: white;
-  transition-duration: 0.5s;
-  transition-timing-function: swing;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-nav.open {
-  max-height: 700px;
-  transition: max-height 0.5s ease-in;
-}
-nav h2 {
-  transition: 0.5s;
-  position: absolute;
-  font-size: 1.75em;
-  top: 15px;
-  right: 32px;
-  font-weight: 300;
-}
-nav h2 b {
-  font-weight: 500;
-}
-@media (max-width: 768px) {
-  nav h2 {
-    font-size: 1.5em;
-    top: 16px;
-  }
-  nav h2 span {
-    display: none;
-  }
-}
-nav ul {
-  padding-top: 100px;
-}
-nav ul li {
-  list-style: none;
-  padding: 1em 2em 1em 1.5em;
-  transition: all 0.5s;
-}
-nav ul li a {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 1.1em;
-  color: rgba(0, 0, 0, 0.87);
-}
-nav ul li:hover {
-  background: #b3e5fc;
-}
-nav ul li:hover a {
-  text-decoration: none;
-}
-nav ul li:active {
-  background: #82d4fa;
-}
-nav ul li:last-child {
-  margin-bottom: 1em;
-}
-
-.navToggle {
-  position: absolute;
-  width: 30px;
-  height: 60px;
-  top: 20px;
-  left: 32px;
-  transition-duration: 0.5s;
-}
-.navToggle:hover {
-  cursor: pointer;
-}
-.navToggle .icon-left {
-  transition-duration: 0.5s;
-  position: absolute;
-  height: 4px;
-  top: 25px;
-  width: 15px;
-  background-color: rgba(0, 0, 0, 0.87);
-}
-.navToggle .icon-left:before {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.87);
-  content: "";
-  top: -10px;
-}
-.navToggle .icon-left:after {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.87);
-  content: "";
-  top: 10px;
-}
-.navToggle .icon-right {
-  transition-duration: 0.5s;
-  position: absolute;
-  height: 4px;
-  top: 25px;
-  width: 15px;
-  background-color: rgba(0, 0, 0, 0.87);
-  left: 15px;
-}
-.navToggle .icon-right:before {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.87);
-  content: "";
-  top: -10px;
-}
-.navToggle .icon-right:after {
-  transition-duration: 0.5s;
-  position: absolute;
-  width: 15px;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.87);
-  content: "";
-  top: 10px;
-}
-.navToggle.open .icon-left {
-  transition-duration: 0.5s;
-  background: transparent;
-}
-.navToggle.open .icon-left:before {
-  -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
-          transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
-}
-.navToggle.open .icon-left:after {
-  -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
-          transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
-}
-.navToggle.open .icon-right {
-  transition-duration: 0.5s;
-  background: transparent;
-}
-.navToggle.open .icon-right:before {
-  -webkit-transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
-          transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
-}
-.navToggle.open .icon-right:after {
-  -webkit-transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
-          transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
-}
-
-.x {
-  padding: 0;
-  margin: 0;
 }
 
 .fab {
@@ -291,24 +227,24 @@ font-size: 14px;
 </head>
 <body>
 
-<div class="container">
-  <div class="row">
-    <nav class="col-sm-12">
-      <div class="navToggle">
-        <div class="icon-left"></div>
-        <div class="icon-right"></div>
-      </div>
-      <h2><b>Material Design</b><span> Menu Toggle</span></h2>
-      <ul>
-        <li><a href="http://instagram.com/mblode_art" target="_blank">Follow me on Instagram @mblode_art</a></li>
-        <li><a href="https://github.com/mblode" target="_blank">Check out my Github</a></li>
-        <li><a href="https://codepen.io/mblode/" target="_blank">Created by Matthew Blode</a></li>
-        <li><a href="https://codepen.io/Lewitje/pen/CwFce/" target="_blank">Fork of "Nav Toggler" by Lewi Hussey</a></li>
-      </ul>
-    </nav>
+	<div class="dd">
+  <h1>Material Design</h1>
+<a href="#" class="drop">
+ <svg class="icon" enable-background="new 0 0 24 24" id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="12" cy="12" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="12" cy="19" r="2"></circle>
+  </svg>
+ </a>
+  <div class="dd-menu">
+    <ul>
+      <li>Profile & status</li>
+       <li>Notification</li>
+       <li>Help</li>
+       <li>Log out</li>
+    </ul>
   </div>
 </div>
-
+ 
+  <h1 style="text-align:center;float:none;margin-top:80px;">Click on that Menu Icon<br><small>Created by Surjith S M</small></h1>
+	
 <div class="fab"></div>
 
 <section>
@@ -682,12 +618,30 @@ font-size: 14px;
 </div>
 </div>
 </section>
-	
-<script>$(".navToggle").click (function(){
-  $(this).toggleClass("open");
-  $("nav").toggleClass("open");
-	});</script>
-		
+
+	<script>$('html').click(function() {
+  $('.dd-menu').removeClass("active");
+});
+
+$('.dd-menu ul li').each(function() {
+    var delay = $(this).index() * 50 + 'ms';
+
+    $(this).css({
+        '-webkit-transition-delay': delay,
+        '-moz-transition-delay': delay,
+        '-o-transition-delay': delay,
+        'transition-delay': delay
+    });                  
+});
+
+$(".drop").click (function(e){
+  e.stopPropagation();
+  $('.dd-menu').toggleClass("active");
+});
+
+ $('.dd-menu').click (function(e){
+  e.stopPropagation();
+ });</script>
 <script type='text/javascript'>
 document.querySelector('.fab').onclick = function () {
 document.querySelector('body').classList.toggle('dark');
