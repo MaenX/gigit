@@ -8,126 +8,6 @@
 	
 <style>
 
-.navOpen {
-  overflow: hidden;
-}
-.wrapper {
-  transition-duration: 0.5s;
-  transition-timing-function: swing;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 100px 40px;
-}
-.wrapper.open {
-  transform: translateX(250px) translateY(50px);
-  -webkit-transform: translateX(250px) translateY(50px);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-}
-.wrapper section {
-  max-width: 600px;
-  margin: 0 auto;
-}
-.wrapper section h1 {
-  font-weight: 300;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.wrapper section h2 {
-  font-weight: 300;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-.wrapper section p {
-  margin-bottom: 40px;
-}
-.openNav {
-  transition-duration: 0.5s;
-  transition-timing-function: swing;
-  width: 50px;
-  height: 50px;
-  background-color: #14B9FF;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 9;
-}
-.openNav:hover {
-  cursor: pointer;
-}
-.openNav .icon {
-  transition-duration: 0.2s;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: white;
-  top: 24px;
-  left: 10px;
-}
-.openNav .icon:before,
-.openNav .icon:after {
-  transition-duration: 0.5s;
-  background-color: white;
-  position: absolute;
-  content: "";
-  width: 30px;
-  height: 2px;
-  left: 0px;
-}
-.openNav .icon:before {
-  top: -7px;
-}
-.openNav .icon:after {
-  top: 7px;
-}
-.openNav.open {
-  transform: translateX(250px) translateY(50px);
-  -webkit-transform: translateX(250px) translateY(50px);
-}
-.openNav.open .icon {
-  background-color: transparent;
-}
-.openNav.open .icon:before,
-.openNav.open .icon:after {
-  top: 0;
-}
-.openNav.open .icon:before {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-.openNav.open .icon:after {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-nav {
-  background-color: #14B9FF;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-nav ul {
-  width: 250px;
-  margin-top: 50px;
-}
-nav ul:hover li {
-  color: rgba(255, 255, 255, 0.5);
-}
-nav ul li {
-  transition-duration: 0.25s;
-  display: block;
-  padding: 5px 40px;
-  color: white;
-  letter-spacing: 0.02em;
-  text-align: right;
-}
-nav ul li:hover {
-  cursor: pointer;
-  color: white;
-}
-
 body {
 --background: #f5f6fa;
 --foreground: #fff;
@@ -257,20 +137,39 @@ font-size: 14px;
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li>Home</li>
-    <li>About me</li>
-    <li>Blog</li>
-    <li>Contact</li>
-  </ul>
-</nav>
-<div class="openNav">
-  <div class="icon"></div>
-</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<div class="demo-layout">
+  <div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                    mdl-textfield--floating-label mdl-textfield--align-right">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">MDL components</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <div class="demo-grid-1 mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
 	
 <div class="fab"></div>
-<div class="wrapper">
+
 <section>
 <h1>Series</h1>
 <div class="container">
@@ -642,13 +541,6 @@ font-size: 14px;
 </div>
 </div>
 </section>
-	</div>
-	<script>$(".openNav").click(function() {
-  $("body").toggleClass("navOpen");
-  $("nav").toggleClass("open");
-  $(".wrapper").toggleClass("open");
-  $(this).toggleClass("open");
-		});</script>
 	
 <script type='text/javascript'>
 document.querySelector('.fab').onclick = function () {
