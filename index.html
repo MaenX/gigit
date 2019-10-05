@@ -137,36 +137,45 @@ font-size: 14px;
 </head>
 <body>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<div class="demo-layout">
-  <div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                    mdl-textfield--floating-label mdl-textfield--align-right">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp" />
-          </div>
-        </div>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">AdminMyCCs</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer">
+        <button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">more_vert</i>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+          <li class="mdl-menu__item">Help & tips</li>
+          <li class="mdl-menu__item">Rate the app</li>
+          <li disabled class="mdl-menu__item">Disabled option</li>
+          <li class="mdl-menu__item">Known issues</li>
+        </ul>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">MDL components</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-      </nav>
+      <!-- Navigation. We hide it in small screens. -->
     </div>
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        <div class="demo-grid-1 mdl-grid">
-          <div class="mdl-cell mdl-cell--12-col">
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Visa &mdash; 3452</a>
+      <a href="#scroll-tab-2" class="mdl-layout__tab">MasterCard &mdash; 9850</a>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Menu</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">News</a>
+      <a class="mdl-navigation__link" href="">Register</a>
+      <a class="mdl-navigation__link" href="">Login</a>
+      <a class="mdl-navigation__link" href="">FAQs</a>
+      <a class="mdl-navigation__link" href="">About</a>
+    </nav>
+  </div>
 	
 <div class="fab"></div>
 
