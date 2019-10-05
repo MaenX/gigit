@@ -8,161 +8,158 @@
 	
 <style>
 body {
-  --background: #f5f6fa;
-  --foreground: #fff;
-  box-sizing: border-box;
-  background: var(--background);
-  margin: 0;
+--background: #f5f6fa;
+--foreground: #fff;
+box-sizing: border-box;
+background: var(--background);
+margin: 0;
 }
 body * {
-  box-sizing: inherit;
-  color: inherit;
+box-sizing: inherit;
+color: inherit;
 }
 body.dark {
-  --background: #1c2833;
-  --foreground: #283845;
-  color: white;
+--background: #1c2833;
+--foreground: #283845;
+color: white;
 }
 
 .fab {
-  background: orange;
-  width: 56px;
-  height: 56px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 50%;
-  z-index: 2;
+background: orange;
+width: 56px;
+height: 56px;
+position: fixed;
+bottom: 20px;
+right: 20px;
+border-radius: 50%;
+z-index: 2;
 }
 
 section {
-  padding: 56px;
-  font-family: sans-serif;
+padding: 56px;
+font-family: sans-serif;
 }
 @media (max-width: 780px) {
-  section {
-    padding: 36px 10px;
-  }
+section {
+padding: 36px 10px;
+}
 }
 
 h1 {
-  font-size: calc(28px + (50 - 28) * ((100vw - 300px) / (1600 - 300)));
-  line-height: 2;
-  margin: 0;
+font-size: calc(28px + (50 - 28) * ((100vw - 300px) / (1600 - 300)));
+line-height: 2;
+margin: 0;
 }
 
 .container {
-  --grid: 180px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--grid), 1fr));
-  grid-gap: 16px;
+--grid: 180px;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(var(--grid), 1fr));
+grid-gap: 16px;
 }
 @media (max-width: 780px) {
-  .container {
-    --grid: 170px;
-  }
+.container {
+--grid: 170px;
+}
 }
 @media (max-width: 450px) {
-  .container {
-    --grid: 130px;
-  }
+.container {
+--grid: 130px;
+}
 }
 
 .card {
-  background: var(--foreground);
-  border-radius: 5px;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+background: var(--foreground);
+border-radius: 5px;
+box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
 }
 .card:hover .cta {
-  opacity: 1;
+opacity: 1;
 }
 .card .image-wrapper {
-  position: relative;
+position: relative;
 }
 .card img {
-  display: block;
-  width: 100%;
+display: block;
+width: 100%;
 }
 .card .cta {
-  width: 40px;
-  height: 40px;
-  border: none;
-  outline: none;
-  position: absolute;
-  cursor: pointer;
-  bottom: 16px;
-  right: 16px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  display: flex;
-  opacity: 0;
-  transition: .3s;
+width: 40px;
+height: 40px;
+border: none;
+outline: none;
+position: absolute;
+cursor: pointer;
+bottom: 16px;
+right: 16px;
+background: rgba(0, 0, 0, 0.2);
+border-radius: 50%;
+display: flex;
+opacity: 0;
+transition: .3s;
 }
 .card .cta:hover {
-  background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.5);
 }
 .card .cta svg {
-  display: block;
-  fill: #fff;
-  width: 20px;
-  margin: auto;
+display: block;
+fill: #fff;
+width: 20px;
+margin: auto;
 }
 .card .details {
-  padding: 16px;
+padding: 6px;
 }
 .card a {
-  display: block;
-  text-decoration: none;
-  line-height: 1.8;
-  color: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+display: block;
+text-decoration: none;
+line-height: 1.8;
+color: inherit;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 .card a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 .card a.title {
-  font-weight: bold;
+font-weight: bold;
 }
 .card a.sub-title {
-  font-size: 14px;
+font-size: 14px;
 }
-
 
 </style>
 	
-<title>Pure CSS Popup Box</title>
+<title>Download & Streaming Anime Subtitle Indonesia</title>
 </head>
 <body>
 
-
-
 <div class="fab"></div>
 <section>
-  <h1>Albums</h1>
-  <div class="container">
-    <div class="card">
-      <div class="image-wrapper">
-        <button class="cta">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-            <g>
-              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
-            </g>
-          </svg>
-        </button><img src="https://cdn.myanimelist.net/images/anime/1500/103005l.jpg"/>
-      </div>
-      <div class="details">
-        <div> <a class="title" href="#">The Beast You Feed</a></div>
-        <div> <a class="sub-title" href="#">Veridia</a></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image-wrapper">
-        <button class="cta">
-          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
-            <g>
-              <path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+<h1>Albums</h1>
+<div class="container">
+<div class="card">
+<div class="image-wrapper">
+<button class="cta">
+<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+<g>
+<path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
+</g>
+</svg>
+</button><img src="https://cdn.myanimelist.net/images/anime/4/43643l.jpg"/>
+</div>
+<div class="details">
+<div> <a class="title" href="#">Sakurasou no Pet na Kanojo</a></div>
+<div> <a class="sub-title" href="#">Episode 24 - FIN</a></div>
+</div>
+</div>
+<div class="card">
+<div class="image-wrapper">
+<button class="cta">
+<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+<g>
+<path d="M3.1489987,1.62721508 C3.1489987,0.748830668 4.11108566,0.208210665 4.86145441,0.667097589 L21.835347,11.0393207 C22.5532194,11.4785129 22.5532194,12.5213482 21.835347,12.9605404 L4.86145441,23.3327636 C4.11108566,23.7916505 3.1489987,23.2520152 3.1489987,22.3726461 L3.1489987,1.62721508 Z"></path>
             </g>
           </svg>
         </button><img src="https://cdn.myanimelist.net/images/anime/1500/103005l.jpg"/>
